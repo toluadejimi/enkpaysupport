@@ -324,8 +324,9 @@ class   CustomerTicketService
             send_notification($message);
 
 
+            $email = $request->email;
 
-            return view('customer.tickets.guest_success');
+            return view('customer.tickets.guest_success', compact('email'));
 
 
         } catch (\Exception $exception) {

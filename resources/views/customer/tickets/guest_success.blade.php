@@ -46,10 +46,12 @@
         <i class="checkmark">✓</i>
       </div>
         <h1>Success</h1> 
-        <p style="font-size: 11px">Your request has been received<br/> Kindly click login button below to follow up your ticket.
+        <p style="font-size: 11px">Your request has been received<br/> Kindly click login button below to follow up your ticket.</p>
         <hr>
 
-        <p style="font-size: 11px">Your default password is - <b>123456</b><br/>
+        <h5>Login credientials</h5>
+        <p style="font-size: 11px">Email - <b>{{$email}}</b><br/></p>
+        <p style="font-size: 11px">Your default password is - <b>123456</b><br/></p>
 
         <a href="https://support.tomitechltd.com/login" class="btn btn-success my-4">Login</a>
 
