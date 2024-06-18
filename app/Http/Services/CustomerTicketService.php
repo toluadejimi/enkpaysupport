@@ -210,7 +210,7 @@ class   CustomerTicketService
                 $user->name = explode('@', $request->email)[0];
                 $user->email = trim($request->email);
                 $user->password = Hash::make(123456);
-                $user->status = 2;
+                $user->status = 1;
                 $user->remember_token = $remember_token;
                 $user->status = $userStatus;
                 $user->tenant_id = getTenantId();
