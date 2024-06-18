@@ -90,8 +90,9 @@
                                             <label class="label-text-title">{{ __('Email') }} <span>*</span></label>
                                             <input type="text" placeholder="example@email.com" class="formControl"
                                                 name="email">
+                                                <span style="font-size: 10px; color:brown;">We respond back to your provided Email, make sure its valid</span>
+
                                         </div>
-                                        <span style="font-size: 8px; color:brown;">We respond back to your provided Email, make sure its valid</span>
                                     </div>
 
                                 </div>
