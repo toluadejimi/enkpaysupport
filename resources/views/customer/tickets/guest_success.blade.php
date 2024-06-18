@@ -1,5 +1,8 @@
 <html>
   <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,900&display=swap" rel="stylesheet">
   </head>
     <style>
@@ -42,8 +45,8 @@
         <i class="checkmark">✓</i>
       </div>
         <h1>Success</h1> 
-        <p>Your request has been receive;<br/> Kindly check your mail inbox to follow up, you can also check your spam folder if npt fpund in inbox.</p>
-        <a href="https://support.tomitechltd.com/ticket/create-ticket" class="btn btn-dark my-4">Create new ticket</a>
+        <p>Your request has been receivem <br/> Kindly check your mail inbox to follow up,<br/> you can also check your spam folder if npt fpund in inbox.</p>
+        <a href="https://support.tomitechltd.com/ticket/create-ticket" class="btn btn-success my-4">Create new ticket</a>
       </div>
     </body>
 </html>
