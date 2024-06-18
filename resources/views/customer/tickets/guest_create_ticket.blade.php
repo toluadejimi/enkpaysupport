@@ -39,7 +39,7 @@
 
                         <div class="my-5">
                             <span class="my-4" style="font-size: 13px; color:brown;">We are sorry for any inconveniences, Please make
-                                sure you filled your valid email. You will get reply on your email. Thanks</span>
+                                sure you filled your valid email. You will get a reply ticket on your email. Thanks</span>
                             <br>
                             <a  href="https://www.youtube.com/shorts/Zn_dALbDhSI?feature=share" class="btn btn-danger my-3">Watch
                                 how to fund your wallet</a>
@@ -100,7 +100,7 @@
                                                 <span>*</span></label>
                                             <input type="text" placeholder="example@email.com" class="formControl"
                                                 name="email">
-                                            <span style="font-size: 10px; color:brown;">We respond back to your provided
+                                            <span style="font-size: 10px; color:brown;">We respond back to your ticket in your provided
                                                 Email, make sure its valid</span>
 
                                         </div>
