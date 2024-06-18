@@ -61,26 +61,18 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        @if($envato?->enable_purchase_code == 1)
-                                            <div class="col-lg-6">
-                                                <div class="user-info-from">
-                                                    <label class="label-text-title">{{__("Purchase Code")}}
-                                                        <span>*</span></label>
-                                                    <input type="text"
-                                                           placeholder="8c3b8f37-34bd-4d4c-71da-331abb35ecc9"
-                                                           class="formControl" name="purchase_code">
-                                                </div>
-                                            </div>
+                                       
                                             <div class="col-lg-6">
                                                 <div class="user-info-from">
                                                     <label class="label-text-title">{{ __('Email') }}
                                                         <span>*</span></label>
-                                                    <input type="text" placeholder="example@email.com"
+                                                    <input type="text" placeholder="Enter your valid email"
                                                            class="formControl"
                                                            name="email" value="{{auth()->user()->email}}" disabled>
                                                 </div>
+                                                <span style="font-size: 8px; color:brown;">We respond back to your provided Email, make sure its valid</span>
                                             </div>
-                                        @endif
+                                       
                                     </div>
                                     @if(count($dynamicFields)>0)
                                         <div class="row">
