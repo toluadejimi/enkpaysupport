@@ -46,7 +46,7 @@
         <i class="checkmark">✓</i>
       </div>
         <h1>Success</h1> 
-        <p>Your request has been receivem <br/> Kindly check your mail inbox to follow up,<br/> you can also check your spam folder if npt fpund in inbox.</p>
+        <p style="font-size: 11px">Your request has been received<br/> Kindly check your mail inbox to follow up,<br/> you can also check your spam folder if npt fpund in inbox.</p>
         <a href="https://support.tomitechltd.com/ticket/create-ticket" class="btn btn-success my-4">Create new ticket</a>
       </div>
     </body>
