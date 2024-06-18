@@ -87,7 +87,7 @@
 
                                     <div class="col-lg-6">
                                         <div class="user-info-from">
-                                            <label class="label-text-title">{{ __('Email') }} <span>*</span></label>
+                                            <label class="label-text-title">{{ __('Enter valid Email ') }} <span>*</span></label>
                                             <input type="text" placeholder="example@email.com" class="formControl"
                                                 name="email">
                                                 <span style="font-size: 10px; color:brown;">We respond back to your provided Email, make sure its valid</span>
