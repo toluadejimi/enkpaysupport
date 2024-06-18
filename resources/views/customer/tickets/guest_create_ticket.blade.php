@@ -38,10 +38,10 @@
                 <div class="row">
                     <div class="col-md-12">
 
-                        <span style="font-size: 13px; color:brown;">We are sorry for any inconveniences, Please make sure you filled your valid email. Response will be commicated on your email. Thanks</span>
+                        <span style="font-size: 13px; color:brown;">We are sorry for any inconveniences, Please make sure you filled your valid email. You will get reply on your email. Thanks</span>
 
                         <a href="https://www.youtube.com/shorts/Zn_dALbDhSI?feature=share" class="btn btn-danger">Watch how to fund your wallet</a>
-                        
+
                         <div class="create-ticket">
                             <form action="{{ route('ticket.guest-ticket-submit') }}" method="post" class="form-horizontal"
                                 enctype="multipart/form-data">
