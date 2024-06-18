@@ -41,7 +41,7 @@
                             <span class="my-4" style="font-size: 13px; color:brown;">We are sorry for any inconveniences, Please make
                                 sure you filled your valid email. You will get reply on your email. Thanks</span>
                             <br>
-                            <a class="my-3" href="https://www.youtube.com/shorts/Zn_dALbDhSI?feature=share" class="btn btn-danger">Watch
+                            <a  href="https://www.youtube.com/shorts/Zn_dALbDhSI?feature=share" class="btn btn-danger my-3">Watch
                                 how to fund your wallet</a>
 
                         </div>
