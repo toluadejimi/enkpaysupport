@@ -19,7 +19,6 @@ use App\Http\Controllers\TicketRatingController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('set-session-data', [DashboardController::class, 'setSessionData'])->name('set-session-data');
 Route::get('announcement', [DashboardController::class, 'announcementSeen'])->name('announcement.seen.update');

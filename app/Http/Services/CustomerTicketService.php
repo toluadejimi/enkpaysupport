@@ -284,7 +284,11 @@ class   CustomerTicketService
             //send email notification start
             newTicketEmailNotify($dataObj->id);
             //send email notification end
-            return redirect()->route('ticket.guest-create-ticket')->with('success', __("Ticket created successfully"));
+            //return redirect()->route('ticket.guest-create-ticket')->with('success', __("Ticket created successfully"));
+
+            return view('customer.tickets.guest_success');
+
+
         } catch (\Exception $exception) {
             DB::rollBack();
             return redirect()->back()->with('error', SOMETHING_WENT_WRONG);
