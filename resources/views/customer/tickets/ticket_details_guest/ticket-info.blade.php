@@ -13,12 +13,7 @@
             </div>
         @endforeach
     @endif
-    <div class="ticket-info">
-        <div>
-            <h5>{{__('Envato Licence')}}:</h5>
-            <p>{{$ticketData->envato_licence??""}}</p>
-        </div>
-    </div>
+
     <div class="ticket-info">
         <div>
             <h5>{{__('Category')}}:</h5>
@@ -38,11 +33,6 @@
             <p>{{\Carbon\Carbon::parse($ticketData->last_reply_time)->diffForHumans()}}</p>
         </div>
     </div>
-    <div class="ticket-info">
-        <div>
-            <h5>{{__('Priority')}}:</h5>
-            <p class="{{$ticketData->priority?getPriorityColor($ticketData->priority):"generally-color"}}">{{$ticketData->priority?getPriorityStatus($ticketData->priority):""}}</p>
-        </div>
-    </div>
+   
 
 </div>
