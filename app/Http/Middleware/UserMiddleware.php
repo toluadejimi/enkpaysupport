@@ -23,7 +23,7 @@ class UserMiddleware
                 abort('403');
             }
         }else {
-            return redirect()->route('ZaiInstaller::pre-install');
+            return $next($request);
         }
     }
 }
