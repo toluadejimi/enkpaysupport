@@ -46,8 +46,13 @@
         <i class="checkmark">✓</i>
       </div>
         <h1>Success</h1> 
-        <p style="font-size: 11px">Your request has been received<br/> Kindly check your mail inbox to follow up,<br/> you can also check your spam folder if npt fpund in inbox.</p>
-        <a href="https://support.tomitechltd.com/ticket/create-ticket" class="btn btn-success my-4">Create new ticket</a>
+        <p style="font-size: 11px">Your request has been received<br/> Kindly click login button below to follow up your ticket.
+        <hr>
+
+        <p style="font-size: 11px">Your default password is - <b>123456</b><br/>
+
+        <a href="https://support.tomitechltd.com/login" class="btn btn-success my-4">Login</a>
+
       </div>
     </body>
 </html>
