@@ -1,12 +1,11 @@
-
 @extends('customer.layouts.app_guest')
 @push('title')
     {{ __('Create Ticket') }}
 @endpush
 
 @push('style')
-    <link rel="stylesheet" type="text/css" href="{{ asset('common/css/summernote/summernote.min.css') }}"/>
-    <link rel="stylesheet" type="text/css" href="{{ asset('common/css/summernote/summernote-lite.min.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('common/css/summernote/summernote.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('common/css/summernote/summernote-lite.min.css') }}" />
 @endpush
 
 @section('content')
@@ -38,9 +37,14 @@
                 <div class="row">
                     <div class="col-md-12">
 
-                        <span style="font-size: 13px; color:brown;">We are sorry for any inconveniences, Please make sure you filled your valid email. You will get reply on your email. Thanks</span>
+                        <div class="my-3">
+                            <span class="my-2" style="font-size: 13px; color:brown;">We are sorry for any inconveniences, Please make
+                                sure you filled your valid email. You will get reply on your email. Thanks</span>
+                            <br>
+                            <a href="https://www.youtube.com/shorts/Zn_dALbDhSI?feature=share" class="btn btn-danger">Watch
+                                how to fund your wallet</a>
 
-                        <a href="https://www.youtube.com/shorts/Zn_dALbDhSI?feature=share" class="btn btn-danger">Watch how to fund your wallet</a>
+                        </div>
 
                         <div class="create-ticket">
                             <form action="{{ route('ticket.guest-ticket-submit') }}" method="post" class="form-horizontal"
@@ -92,10 +96,12 @@
 
                                     <div class="col-lg-6">
                                         <div class="user-info-from">
-                                            <label class="label-text-title">{{ __('Enter valid Email ') }} <span>*</span></label>
+                                            <label class="label-text-title">{{ __('Enter valid Email ') }}
+                                                <span>*</span></label>
                                             <input type="text" placeholder="example@email.com" class="formControl"
                                                 name="email">
-                                                <span style="font-size: 10px; color:brown;">We respond back to your provided Email, make sure its valid</span>
+                                            <span style="font-size: 10px; color:brown;">We respond back to your provided
+                                                Email, make sure its valid</span>
 
                                         </div>
                                     </div>
