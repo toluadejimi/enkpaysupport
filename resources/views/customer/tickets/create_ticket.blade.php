@@ -70,7 +70,7 @@
                                                            class="formControl"
                                                            name="email" value="{{auth()->user()->email}}" disabled>
                                                 </div>
-                                                <span style="font-size: 8px; color:brown;">We respond back to your provided Email, make sure its valid</span>
+                                                <h6 style="font-size: 8px; color:brown;">We respond back to your provided Email, make sure its valid</h6>
                                             </div>
                                        
                                     </div>
