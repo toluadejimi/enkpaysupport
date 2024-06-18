@@ -14,20 +14,7 @@
         @endforeach
     @endif
 
-    @if($envato?->enable_purchase_code == 1)
-        <div class="ticket-info">
-            <div>
-                <h5>{{__('Licence')}}:</h5>
-                <p>{{$ticketData->envato_licence??""}}</p>
-            </div>
-        </div>
-    @endif
-{{--    <div class="ticket-info">--}}
-{{--        <div>--}}
-{{--            <h5>{{__('Domain')}}:</h5>--}}
-{{--            <p><a href="{{$ticketData->domain??""}}" target="_blank">{{$ticketData->domain??""}}</a></p>--}}
-{{--        </div>--}}
-{{--    </div>--}}
+    
     <div class="ticket-info">
         <div>
             <h5>{{__('Category')}}:</h5>
@@ -47,11 +34,6 @@
             <p>{{\Carbon\Carbon::parse($ticketData->last_reply_time)->diffForHumans()}}</p>
         </div>
     </div>
-    <div class="ticket-info">
-        <div>
-            <h5>{{__('Priority')}}:</h5>
-            <p class="{{$ticketData->priority?getPriorityColor($ticketData->priority):"generally-color"}}">{{$ticketData->priority?getPriorityStatus($ticketData->priority):""}}</p>
-        </div>
-    </div>
+  
 
 </div>
