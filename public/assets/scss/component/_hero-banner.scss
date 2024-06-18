@@ -1,0 +1,37 @@
+/*===============================
+#.hero-banner-area
+=================================*/
+.hero-banner-area {
+    padding-top: 19rem;
+    padding-bottom: 12rem;
+    background: var(--primary-gradient);
+    .banner-info {
+        .banner-title {
+            font-size: 7rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 1.6rem;
+        }
+        .banner-content {
+            margin-bottom: 3.5rem;
+            font-size: 1.9rem;
+            color: var(--white);
+        }
+    }
+}
+@media (max-width: 1199px) {
+    .hero-banner-area .banner-info .banner-title {
+        font-size: 5rem;
+    }
+}
+@media (max-width: 991px) {
+    .hero-banner-area {
+        padding-top: 14rem;
+        padding-bottom: 6rem;
+    }
+}
+@media (max-width: 375px) {
+    .hero-banner-area .banner-info .banner-title {
+        font-size: 4rem;
+    }
+}

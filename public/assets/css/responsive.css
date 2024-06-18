@@ -1,0 +1,149 @@
+/* Normal desktop :992px. */
+
+@media (min-width: 992px) and (max-width: 1200px) {
+	.recipes-area .single-recipes .recipes-info {
+          padding: 1rem;
+     }
+     .featured-area .single-featured .featured-info {
+          padding: 2rem 1.5rem;
+     }
+     .featured-area .single-featured .featured-info p {
+          font-size: 1.4rem;
+     }
+     .newsletter-area .newsletter-inner-wrap {
+          max-width: 430px;
+     }
+     .newsletter-area .newsletter-info .title {
+          font-size: 3.2rem;
+     }
+}
+
+@media (max-width: 1199px) {
+    
+}
+
+/* Tablet desktop :768px. */
+
+
+@media  (max-width: 991px) {
+	.about-area .about-wrap .about-info {
+          max-width: 100%;
+          padding: 3rem;
+     }
+     .newsletter-area .newsletter-inner-wrap {
+          max-width: 100%;
+          margin: 0 auto;
+          padding: 3rem;
+     }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	.recipes-area .single-recipes .recipes-thumbnail img {
+          width: 100%;
+          height: auto;
+     }
+     .recipes-area .single-recipes .recipes-thumbnail {
+          width: 100%;
+     }
+}
+
+/*  Small mobile :320px. */
+
+@media (max-width: 767px) {
+	.recipes-area .single-recipes .recipes-info {
+          padding: 2rem;
+     }
+     .hero-banner-area .banner-image {
+          width: 100%;
+          height: auto;
+          left: 0;
+          margin-top: 3rem;
+     }
+     .hero-banner-area .banner-content h1 {
+          font-size: 5rem;
+     }
+     .section{
+          padding: 6rem 0
+     }
+     .section-top{
+          padding: 6rem 0 0
+     }
+     .section-bottom{
+          padding: 0 0 6rem 0
+     }
+     .pb-70 {
+          padding-bottom: 3rem;
+     }
+     .fooer-area .footer-bottom {
+          padding: 1.5rem 0;
+     }
+     .fooer-area .footer-bottom .copyright-area {
+          margin-bottom: 1rem;
+     }
+     .fooer-area {
+          padding-top: 16rem;
+     }
+     .featured-area .single-featured .featured-info p {
+          font-size: 1.4rem;
+     }
+}
+@media (max-width: 575px) {
+	.about-area .about-wrap .about-info .title {
+          font-size: 3.2rem;
+     }
+     .about-area .about-wrap .about-info {
+          padding: 2rem 1.5rem;
+     }
+     .recipes-area .single-recipes .recipes-thumbnail img {
+          width: 100%;
+          height: auto;
+     }
+     .recipes-area .single-recipes .recipes-thumbnail {
+          width: 100%;
+     }
+     .product-area .single-product .product-thumbnail img {
+          height: auto;
+     }
+     .featured-area .single-featured .featured-info .featured-title {
+          font-size: 1.8rem;
+     }
+     .hero-banner-area .banner-content h1 {
+          font-size: 3.8rem;
+     }
+     .newsletter-area .newsletter-inner-wrap {
+          padding: 2rem 1.5rem;
+     }
+     .section-title-area .title {
+          font-size: 3.2rem;
+     }
+     .featured-tab-area .tab-title {
+          margin-bottom: 2rem;
+          font-size: 3.2rem;
+     }
+     .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+          padding-right: 15px;
+          padding-left: 15px;
+     }
+}
+@media (max-width: 480px) {
+	.newsletter-area .newsletter-form .form-group {
+          flex-flow: row wrap;
+     }
+     .newsletter-area .newsletter-form .form-group .form-contorl {
+          flex: auto;
+          margin-right: 0;
+          width: 100%;
+          margin-bottom: 1.5rem;
+     }
+     .newsletter-area .newsletter-info .title {
+          font-size: 3.2rem;
+     }
+}
+
+
+/* Large Mobile :577px. */
+
+@media only screen and (min-width: 577px) and (max-width: 767px) {
+	
+}
+

@@ -1,0 +1,612 @@
+/* // XX-Large devices (larger desktops, 1400px and up) */
+
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+
+    /* knowledge area start */
+
+    .knowledge-list {
+        padding: 40px;
+    }
+
+
+    /* knowledge area end */
+
+    /* faq area start */
+
+    .navigation-button button {
+        margin-bottom: 10px;
+        margin-right: 10px;
+    }
+
+
+
+    /* faq area end */
+
+}
+
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+    .langHome{
+        display: none !important;
+      }
+
+      .dropdown-menu-lang.show {
+        background: #32248f;
+        font-size: 5px !important;
+    }
+
+    /* hero area start*/
+
+    .hero-text h2 {
+        font-size: 52px;
+        line-height: normal;
+        margin-bottom: 30px;
+    }
+
+    .langHome.hide {
+        display: inline !important;
+      }
+
+
+
+    /* hero area end*/
+
+    /* logical area start */
+
+    .logical-text h2 {
+        text-align: center;
+    }
+
+    .logical-text>p {
+        text-align: center;
+    }
+
+    /* logical area end */
+
+    /* knowledge area start */
+
+    .knowledge-text-area {
+        padding-bottom: 60px;
+    }
+
+    /* knowledge area end */
+
+    /* faq start  */
+
+    section.frequent-question-area {
+        padding: 80px;
+    }
+
+    .navigation-button {
+        text-align: center;
+    }
+
+    /* faq end  */
+
+    .support-area {
+        padding-bottom: 90px;
+    }
+
+    section.user-area {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    .support-bg {
+        padding: 100px 0;
+    }
+
+}
+
+
+/* // `xl` applies to large devices (desktops, less than 1200px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+    /* hero area start */
+    .header-menu ul li a {
+        padding: 0px 15.5px;
+    }
+
+    .coustom-container {
+        padding: 120px 0;
+    }
+
+    .hero-text h2 {
+        color: #fff;
+        font-size: 60px;
+        line-height: 70px;
+        margin-bottom: 30px;
+    }
+
+    /* hero area end */
+
+    /* knowledge area start */
+
+    .knowledge-list {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .knowledge-list ul li {
+        margin-bottom: 9px;
+        font-size: 17px;
+    }
+
+
+
+    /* knowledge area end */
+
+    /* owl-carousel  start */
+
+    .user-box.owl-carousel .user-img img {
+        width: 310px;
+    }
+
+    /* owl-carousel  end */
+
+    /* sign up area start*/
+
+    .signup-login {
+        padding: 11px 0px 0;
+    }
+
+    .signup-left-area>h2 {
+        font-size: 30px;
+        padding: 0;
+
+    }
+
+    .signup-left-area>p {
+
+        padding: 0;
+
+        margin-top: 30px;
+    }
+
+    .signup-right-area {
+        padding: 30px 15px;
+
+    }
+
+    .social-signup-area button {
+        font-size: 15px;
+
+        padding: 15px 14px;
+    }
+
+    /* sign up area end*/
+
+}
+
+
+/* // `md` applies to small devices (landscape phones, less than 768px) */
+@media (min-width: 7px) and (max-width: 767.98px) {
+
+    .langHome{
+        display: none !important;
+      }
+
+      .dropdown-menu-lang.show {
+        background: #32248f;
+        font-size: 5px !important;
+    }
+
+    /* title area start */
+
+    .title-text {
+        padding: 0 10px
+    }
+
+    /* title area end */
+
+    /* hero area start */
+
+    .coustom-container {
+        padding: 100px 0;
+    }
+
+    .hero-text h2 {
+        font-size: 34px;
+        line-height: 45px;
+        margin-bottom: 30px;
+    }
+
+    .search-box input {
+        width: 100%;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #000;
+    }
+
+    .search-box {
+        text-align: center;
+    }
+
+    button.secrch-btu {
+        position: relative;
+    }
+
+    .popular-search {
+        display: block;
+    }
+
+    .popular-search p {
+        margin-bottom: 12px;
+    }
+
+    /* hero area end */
+
+    /* logical area start */
+
+    section.logical-area {
+        padding: 90px 0;
+    }
+
+
+
+    .logical-text {
+        margin-top: 0px;
+    }
+
+    .logical-text h2 {
+        font-size: 35px;
+        line-height: 45px;
+        text-align: center;
+    }
+
+    .logical-text>p {
+        text-align: center;
+    }
+
+    /* logical area end */
+
+    /* knowledge area start */
+
+    .title-text h2 {
+        font-size: 35px;
+        line-height: 45px;
+    }
+
+    .knowledge-area {
+        padding-top: 90px;
+    }
+
+    .knowledge-part {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .knowledge-list {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .knowledge-list ul li {
+        margin-bottom: 20px;
+    }
+
+    .single-knowledge-support {
+        padding: 30px;
+    }
+
+    /* knowledge area end */
+
+    /* user are start */
+
+    section.user-area {
+        padding: 90px 0;
+    }
+
+    .user-box .single-slider {
+        text-align: center;
+    }
+
+    .user-box.owl-carousel .user-img img {
+        display: none;
+    }
+
+    .user-box .single-slider p {
+        margin-bottom: 24px;
+    }
+
+    /* user are end */
+
+    /* faq area start*/
+
+    section.frequent-question-area {
+        padding: 90px 0;
+    }
+
+    .navigation-part {
+        text-align: center;
+    }
+
+    .frequent-accordion button.accordion-button {
+        font-size: 21px;
+    }
+
+    /* faq area end*/
+
+    /*support area start */
+
+    .support-area {
+        padding-bottom: 90px;
+    }
+
+    .support-bg {
+        padding: 90px 10px;
+    }
+
+    .support-bg h2 {
+        font-size: 35px;
+        line-height: 45px;
+    }
+
+
+    /*support area end */
+
+
+    /* footer area start */
+
+    footer.footer-area {
+        text-align: center;
+    }
+
+    .single-widget p {
+        margin: 22px auto 0;
+    }
+
+    .single-widget-menu h2 {
+        margin-bottom: 25px;
+        margin-top: 35px;
+    }
+
+    ul.solial-icon {
+        width: 120px;
+        margin: auto;
+        text-align: left;
+    }
+
+    footer.footer-area {
+        padding: 60px 0;
+    }
+
+    /* footer area end */
+
+
+    /* ------------------
+    category page start
+    ---------------------*/
+
+    .breadcrumb-items.category-block {
+        display: block;
+        margin-top: 16px;
+    }
+
+    section.category-started {
+        padding: 90px 0;
+    }
+
+    .category-started-title h2 {
+        font-size: 35px;
+        line-height: 45px;
+        text-align: center;
+    }
+
+    .category-started-icon {
+
+        flex-direction: column;
+        gap: 14px;
+        align-items: center;
+    }
+
+    .spasila-code {
+
+        padding: 34px 4px;
+
+    }
+
+    .user-think {
+
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .user-think p {
+
+        margin: 0 0px 0 0;
+    }
+
+    .user-think .yes-btu {
+
+        margin-right: 0px;
+    }
+
+    .post-user-category {
+
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .share-user-post {
+        margin-top: 13px;
+        text-align: center;
+    }
+
+    /* ------------------
+    category page end
+    ---------------------*/
+
+    /*----------------
+     price area start
+     ----------------*/
+
+    .most-populer {
+        margin-top: 64px;
+    }
+
+    .price-bg-container {
+
+        padding-top: 81px;
+
+    }
+
+    /*----------------
+     price area end
+     ----------------*/
+
+    /*----------
+    login page  start
+    ---------- */
+
+    .social-signup-area {
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+    }
+    .signup-right-area h2 {
+        font-size: 35px;
+
+    }
+
+        /*----------
+    login page  end
+    ---------- */
+
+
+}
+
+
+
+
+/*----------
+login page
+---------- */
+
+@media (min-width: 1200px) and (max-width: 1439.98px) {
+
+    .signup-login {
+        padding: 30px 30px 0;
+    }
+
+    .signup-left-area>h2 {
+        padding: 0 30px;
+        font-size: 40px;
+    }
+
+    .signup-left-area>p {
+        padding: 0px 30px 0 30px;
+
+    }
+
+    .signup-right-area {
+        padding: 15px 40px;
+
+    }
+
+    .social-signup-area button {
+        padding: 16px 16px;
+    }
+
+}
+
+
+@media (min-width: 92px) and (max-width: 1199.98px) {
+
+    a.down-btu {
+        padding: 10px 8px;
+        font-size: 12px;
+    }
+
+    section.signup-area {
+        flex-direction: column;
+    }
+
+    .signup-left-area {
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    .signup-right-area {
+        max-width: 100%;
+        margin-top: 15px;
+    }
+}
+
+@media (min-width: 92px) and (max-width: 432.98px) {
+
+    .remember-area {
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+    }
+
+}
+
+@media (min-width: 500px) and (max-width: 767.98px) {
+
+    .signup-login {
+        padding: 70px 70px 0;
+    }
+
+    .signup-left-area>h2 {
+        font-size: 40px;
+        padding: 0 70px;
+    }
+
+    .signup-left-area>p {
+        padding: 0px 70px 0 70px;
+    }
+
+    .signup-cover-img {
+        padding: 0 78px 60px 70px;
+    }
+
+}
+
+@media (min-width: 50px) and (max-width: 500.98px) {
+
+    .signup-right-area {
+        padding: 15px 15px;
+
+    }
+
+    .signup-login {
+        padding: 40px 40px 0;
+    }
+
+    .signup-left-area>h2 {
+        font-size: 35px;
+        padding: 0 40px;
+    }
+
+    .signup-left-area>p {
+        padding: 0px 40px 0 40px;
+    }
+
+    .signup-cover-img {
+        padding: 0 40px 60px 40px;
+    }
+
+    .social-signup-area button {
+
+        padding: 16px 11px;
+    }
+
+    .register-area .register-left-area {
+        padding: 0;
+    }
+
+    .signup-border p:before {
+
+        width: 20%;
+
+    }
+
+    .signup-border p:after {
+
+        width: 20%;
+
+    }
+
+}

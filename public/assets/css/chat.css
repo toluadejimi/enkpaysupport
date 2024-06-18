@@ -1,0 +1,812 @@
+
+
+/* -------------------
+chat button css area start
+-----------------------------------*/
+
+.content-user-list {
+    height: 100%;
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 13px 29px 0px rgba(206, 206, 206, 0.12);
+}
+
+.single-chat-name {
+    gap: 15px;
+    display: flex;
+    padding: 20px;
+    border-bottom: 1px solid #EAEAEA;
+    align-items: center;
+}
+
+.single-chat-info-name {
+    width: 100%;
+}
+
+.single-chat-img img {
+    width: 100%;
+    height: auto;
+}
+
+.single-chat-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: relative;
+    background-color: #EAEAEA;
+}
+
+.single-chat-info-name h5 {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%; /* 23.4px */
+    margin-bottom: 2px;
+    color: #0C0825;
+}
+
+.inbox-item-action.active {
+    background: rgba(102, 89, 255, 0.08);
+}
+
+.inbox-item-action.seen .single-chat-info-name h5{
+    color: #737c90;
+}
+
+.message-all {
+    padding: 25px 20px;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+}
+
+.message-all span {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    color: #FFF;
+    background: #6659FF;
+    padding: 1px 5px;
+    border-radius: 50%;
+}
+
+li.inbox-item-action:hover{
+    background: rgba(102, 89, 255, 0.08);
+}
+
+.active-user {
+    width: 10px;
+    height: 10px;
+    background: #1EBB52;
+    display: inline-block;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 3px;
+    right: 6px;
+    border: 2px solid #fff;
+}
+
+
+.customer-single-massages {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    padding: 15px;
+}
+
+.single-img-customer {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+}
+
+.single-img-customer img {
+    width: 100%;
+    border-radius: 50%;
+    height: 100%;
+}
+
+.chart-reaply {
+    border-radius: 10px;
+    background: #FFF;
+}
+
+.both-conation {
+    padding: 20px 20px;
+}
+
+.customer-name h5 {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+    margin-bottom: 10px;
+}
+
+.customer-name h5 span {
+    color: #737C90;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    margin-left: 10px;
+}
+
+
+.customer-massages {
+    padding: 9px 15px;
+    border-radius: 0px 15px 15px 15px;
+    border: 1px solid #EAEAEA;
+    word-break:break-all;
+}
+
+.customer-massages.agent-name {
+    border-radius: 15px 0px 15px 15px;
+    background: #6659FF;
+    color: #FFF;
+}
+
+.customer-single-massages.agent {
+    justify-content: flex-end;
+}
+
+.input-box-part {
+    display: flex;
+    gap: 10px;
+    padding: 24px;
+    border-radius: 0px 0px 15px 15px;
+    box-shadow: 0px -5px 76px 0px rgba(205, 205, 205, 0.33);
+}
+
+.reply-input-icon {
+    display: flex;
+    gap: 11px;
+    align-items: center;
+    position: relative;
+}
+
+.massage {
+    display: flex;
+    gap: 0;
+    position: relative;
+    border-radius: 10px;
+    border: 1px solid #EAEAEA;
+    width: 100%;
+}
+
+.massage textarea {
+    width: 100%;
+    color: #737C90;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    padding: 11px 15px 0px;
+    resize: none;
+    height: 44px;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+.massage input{
+    width: 100%;
+    color: #737C90;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    padding: 11px 15px;
+    resize: none;
+    height: 44px;
+    border: none;
+    outline: none;
+    background: transparent;
+    margin-right: 0;
+}
+
+.massage>button {
+    border: none;
+    background: none;
+    margin-left: 10px;
+}
+
+.massage textarea:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    background-color: transparent;
+    color: #737C90;
+}
+
+.bg-submit {
+    background: #6659FF;
+    border: none;
+    padding: 0 10px;
+    border-radius: 50%;
+}
+
+.single-icon button {
+    background: no-repeat;
+    border: none;
+}
+
+.reply-input-img label {
+    cursor: pointer;
+}
+
+
+.upload__img-close {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-align: center;
+    line-height: 24px;
+    z-index: 1;
+    cursor: pointer;
+  }
+  .upload__img-close:after {
+    content: "✖";
+    font-size: 14px;
+    color: white;
+  }
+
+  .img-bg {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    padding-bottom: 100%;
+  }
+
+  .upload__img-wrap {
+      position: absolute;
+      top: -35px;
+      left: 0;
+      width: 100%;
+      display: flex;
+      gap: 8px;
+  }
+
+  .upload__img-box>div {
+      width: 31px;
+      height: 31px;
+  }
+
+  .upload__img-box {
+      width: 31px;
+      height: 30px;
+  }
+
+
+
+.no-customer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 29px;
+    height: 100%;
+}
+
+
+  /*  --------------
+  mood start
+  ----------------*/
+
+  body.dark .content-user-list{
+    border: 1px solid rgba(115, 124, 144, 0.04);
+    background: #22242B;
+    box-shadow: 0px 4px 250px 0px rgba(8, 7, 12, 0.12);
+}
+
+body.dark .chart-reaply{
+    border: 1px solid rgba(115, 124, 144, 0.04);
+    background: #22242B;
+    box-shadow: 0px 4px 250px 0px rgba(8, 7, 12, 0.12);
+
+}
+
+body.dark .single-chat-name, body.dark .customer-massages, body.dark .massage{
+    border: 1px solid rgba(115, 124, 144, 0.12);
+}
+
+
+  /* ---------------
+   mood emd
+   ---------------*/
+
+/* ------------
+responsive area start
+----------- */
+
+@media (min-width: 76px) and (max-width: 600.98px) {
+    .customer-single-massages{
+        width: auto;
+    }
+
+    .bg-submit {
+       padding: 10px;
+    }
+}
+
+/* ------------
+responsive area end
+----------- */
+
+
+/*------------------------
+ chat button css area end
+ -------------------------------*/
+
+
+ /* --------------------
+ chart-customer-area start
+ -----------------------*/
+
+.chart-customer-area {
+    background: #FFF;
+    box-shadow: 0px 13px 29px 0px rgba(206, 206, 206, 0.12);
+    border-radius: 15px;
+}
+
+.customer-submit {
+    background: none;
+    border: none;
+}
+
+.customer-all-chart{
+    max-height: 565px;
+    overflow-y: auto;
+}
+
+.customer-user-img-chat img {
+    width: 41px;
+    border-radius: 50%;
+}
+
+.customer-chat-banner {
+    border-radius: 15px 15px 0px 0px;
+    background: #0C0825;
+    padding: 28px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.customer-user-info-chat {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.customer-user-name-chat {
+    color: #fff;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.customer-time-chat {
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.back-button-chat {
+    cursor: pointer;
+}
+
+.new-ticket-box{
+    display: none;
+}
+
+.history-ticket-box{
+    display: none;
+}
+
+.hide{
+    position: absolute;
+    bottom: 6px;
+    right: 0px;
+    z-index: 9999;
+    width: 450px;
+    height: 100%;
+    display: none;
+}
+
+/*
+dark mood add
+*/
+
+
+body.dark .chart-customer-area{
+    border: 1px solid rgba(115, 124, 144, 0.04);
+    background: #22242B;
+    box-shadow: 0px 4px 250px 0px rgba(8, 7, 12, 0.12);
+}
+
+/*
+dark mood add
+*/
+
+ /* --------------------
+ chart-customer-area end
+ -----------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+/*-------------
+ chart start css
+ -------------*/
+
+ .chat-inbox-area-part {
+    border-radius: 15px;
+    background: #FFF;
+    width: 450px;
+    height: 100%;
+}
+
+.tab-content.chat{
+    height:490px
+}
+
+div#chatHistoryList {
+    height: 430px;
+    overflow-x: auto;
+}
+
+.typicall-max-hight{
+    max-height: 500px;
+
+    overflow-y: auto;
+}
+
+.chart-banner {
+    border-radius: 15px 15px 0px 0px;
+    background: #0C0825;
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.need-help {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    margin-top: 52px;
+    color: #FFF;
+}
+
+.logo-chart img {
+    width: auto;
+    max-height: 50px;
+}
+
+.single-typically-part {
+    margin: 0 15px;
+    border-radius: 10px;
+    border: 1px solid #EAEAEA;
+    background: #FFF;
+    box-shadow: 0px 4px 20px 0px rgba(120, 119, 128, 0.12);
+    padding: 20px 15px;
+    margin-bottom: 30px;
+}
+
+.typically-title {
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    color: #6659FF;
+    margin-bottom: 5px;
+}
+
+.typicall-text-part>p {
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.sent-btu {
+    background: none;
+    border: none;
+}
+
+.chat-part-tab.nav-pills .nav-link {
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    color: #737C90;
+    width: 160px;
+}
+
+.chat-part-tab.nav-pills .nav-link.active {
+    background: none;
+    position: relative;
+}
+
+.icon-chart {
+    display: inline-block;
+}
+
+.chat-part-tab.nav-pills .nav-link.active .icon-chart svg path {
+    fill: #6659FF;
+}
+
+.chat-part-tab.nav-pills .nav-link.active {
+    color: #6659FF;
+    font-weight: 500;
+}
+
+.chart-tab-text {
+    display: block;
+    margin-top: 6px;
+}
+
+.chat-part-tab {
+    padding-top: 7px;
+    padding-bottom: 25px;
+    margin: 0px 20px;
+    justify-content: space-between;
+}
+
+.chat-part-bg{
+    justify-content: space-between;
+    border-radius: 0px 0px 15px 15px;
+    background: var(--white, #FFF);
+    box-shadow: 0px -5px 76px 0px rgba(205, 205, 205, 0.33);
+
+
+}
+
+.chat-part-tab.nav-pills .nav-link.active:after {
+    top: -7px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #6659FF;
+    content: "";
+    position: absolute;
+    border-radius: 5px;
+}
+
+.messages-title-text {
+    width: 100%;
+    text-align: center;
+}
+
+.messages-title-text h6 {
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    color: #fff;
+}
+
+.messages-title {
+    border-radius: 15px 15px 0px 0px;
+    background: #0C0825;
+    padding: 20px;
+}
+
+.personal-image img {
+    width: 25px;
+    height: 25px;
+    position: relative;
+    border-radius: 50%;
+}
+
+.customer-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.personal-image {
+    position: relative;
+    display: flex;
+    width: 55px;
+}
+
+.agent-img {
+    /*position: absolute;*/
+    left: 17px;
+    top: 0;
+}
+.agent-img:not(:first-child){
+    margin-left: -10px;
+}
+
+.single-personal {
+    display: flex;
+    gap: 10px;
+    padding: 15px;
+    border-bottom: 1px solid #EAEAEA;
+    cursor: pointer;
+}
+
+.customer-name-chart {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    color: #0C0825;
+    margin-bottom: 3px;
+}
+
+.customer-name-info p {
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    color: #737C90;
+}
+
+.customer-name-info p .time-left-count {
+    margin-left: 14px;
+    position: relative;
+}
+
+.customer-name-info p .time-left-count:after {
+    top: 50%;
+    left: -11px;
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #737C90;
+    content: '';
+    border-radius: 50%;
+    margin-top: -3px;
+}
+
+.only-customer-img img {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.ticket-box-customer {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    z-index: 9999;
+    width: 450px;
+    height: 100%;
+}
+
+.close-tab-chart{
+    cursor: pointer;
+}
+
+@media (min-width: 76px) and (max-width: 500.98px) {
+    .chat-inbox-area-part{
+        width: auto;
+    }
+
+    .ticket-box-customer {
+        width: 100%;
+    }
+
+    .chat-part-tab.nav-pills .nav-link {
+        width: auto;
+    }
+
+    .chat-popup{
+        width: 100%;
+    }
+}
+
+.closedImg{
+    display: none;
+}
+
+
+.model-image-preview {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 9999;
+    background: #000000d9;
+}
+
+.closele {
+    color: #fff;
+    font-size: 43px;
+    display: block;
+    text-align: right;
+    padding: 0 46px;
+    cursor: pointer;
+}
+
+.uplodimg {
+    width: 37px;
+    height: auto;
+}
+
+.model-image-preview{
+    display: none;
+}
+
+.close-tab-chart i {
+    font-size: 17px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.model-image-preview img {
+    max-width: 500px;
+    margin: auto;
+}
+
+.customer-all-chart.chat-history-details {
+    height: 481px;
+    max-height: 644px;
+}
+
+
+/* dark mood add  */
+
+body.dark .chat-part-bg {
+    box-shadow: none;
+    background-color: #22242B;
+}
+
+body.dark .chat-inbox-area-part {
+    background-color: #0E0F13;
+}
+
+body.dark .single-typically-part {
+    border: 1px solid rgba(115, 124, 144, 0.12);
+    background-color: #17181C;
+}
+
+body.dark .single-personal {
+    border: 1px solid rgba(115, 124, 144, 0.12);
+}
+
+body.dark .input-box-part {
+    box-shadow: 0px -5px 2px -5px rgba(205, 205, 205, 0.33);
+}
+
+body.dark .swal2-popup{
+    background-color: #17181c;
+}
+
+.msg-board-customer {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    resize: none;
+    height: 390px;
+}
+/*.personal-image > div {*/
+/*    width: 25px;*/
+/*    height: 25px;*/
+/*    border-radius: 50%;*/
+/*    display: flex !important;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    background: #EAEAEA;*/
+/*}*/

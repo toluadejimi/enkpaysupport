@@ -1,0 +1,42 @@
+/*===============================
+#.latest-blog
+=================================*/
+.latest-blog-area {
+  .latest-blog-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    grid-gap: 2rem;
+    margin-bottom: 6rem;
+  }
+}
+.filtering-button {
+  display: flex;
+  flex-flow: row wrap;
+  grid-gap: 1.5rem;
+  margin-right: 0;
+  padding: 0;
+  li {
+    display: inline-flex;
+    list-style: none;
+    padding: 1.2rem 3.5rem;
+    border-radius: 1rem;
+    border: 1px solid #eaeaea;
+    cursor: pointer;
+    font-weight: 1.8rem;
+    font-weight: 400;
+    color: var(--bColor);
+    transition: $transition;
+    &:hover {
+      color: var(--white);
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+    }
+    &.active {
+      color: var(--white);
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+    }
+  }
+}

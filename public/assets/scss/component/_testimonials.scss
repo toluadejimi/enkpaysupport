@@ -1,0 +1,70 @@
+/*===============================
+#.testimonial-area
+=================================*/
+.testimonial-area {
+  .testimonials-wrap {
+    column-count: 4;
+    column-gap: 2.5rem;
+    .single-testimonial {
+      break-inside: avoid-column;
+      margin-bottom: 2.5rem;
+      padding: 4rem 3rem;
+      border-radius: 1rem;
+      background: var(--white);
+      .clint-review {
+        display: flex;
+        align-items: center;
+        grid-column-gap: 0.5rem;
+        color: #fca610;
+      }
+      .testimonial-content {
+        margin: 3.5rem 0;
+        p {
+          margin: 0;
+        }
+      }
+      .slint-info-wrap {
+        display: flex;
+        align-items: center;
+        .clint-image {
+          img {
+            width: 5rem;
+            height: 5rem;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+        }
+        .clint-info {
+          flex: 1;
+          padding-left: 1.5rem;
+          .clint-name {
+            font-size: 2rem;
+            font-weight: 500;
+            color: var(--tColor);
+          }
+          .clint-designation {
+            margin: 0;
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: var(--bColor);
+          }
+        }
+      }
+    }
+  }
+}
+@media(max-width: 1199px) {
+  .testimonial-area .testimonials-wrap {
+    column-count: 3;
+  }
+}
+@media(max-width: 991px) {
+  .testimonial-area .testimonials-wrap {
+    column-count: 2;
+  }
+}
+@media(max-width: 767px) {
+  .testimonial-area .testimonials-wrap {
+    column-count: 1;
+  }
+}

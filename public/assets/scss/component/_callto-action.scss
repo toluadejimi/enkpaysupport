@@ -1,0 +1,13 @@
+/*===============================
+#.callto-action
+=================================*/
+.callto-action-wrap {
+  padding: 12rem 3rem;
+  border-radius: 1rem;
+  background: var(--primary-gradient);
+}
+@media (max-width: 767px) {
+  .callto-action-wrap {
+    padding: 6rem 3rem;
+  }
+}

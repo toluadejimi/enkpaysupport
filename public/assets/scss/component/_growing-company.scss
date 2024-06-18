@@ -1,0 +1,71 @@
+/*===============================
+#.growing-company
+=================================*/
+.growing-company-title {
+  display: inline-block;
+  position: relative;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 6rem;
+  &::before {
+    position: absolute;
+    content: "";
+    width: 3.5rem;
+    height: 0.2rem;
+    background-color: var(--primary-color);
+    right: calc(100% + 12px);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &::after {
+    position: absolute;
+    content: "";
+    width: 3.5rem;
+    height: 0.2rem;
+    background-color: var(--primary-color);
+    left: calc(100% + 12px);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+.growing-company-wrap {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  grid-gap: 3rem;
+  .signle-company {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #212121;
+    border-radius: 1rem;
+    height: 100px;
+    padding: 4rem;
+    cursor: pointer;
+    img {
+      height: 40px;
+      object-fit: contain;
+    }
+  }
+}
+@media (max-width: 991px) {
+  .growing-company-wrap .signle-company {
+    padding: 1.5rem;
+    height: 85px;
+  }
+  .growing-company-wrap {
+    grid-gap: 1rem;
+  }
+  .growing-company-wrap .signle-company img {
+    height: 35px;
+  }
+}
+@media (max-width: 480px) {
+  .growing-company-title::before {
+    display: none;
+  }
+  .growing-company-title::after {
+    display: none;
+  }
+}

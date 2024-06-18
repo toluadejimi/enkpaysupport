@@ -1,0 +1,35 @@
+/*===============================
+#.mission-area
+=================================*/
+.mission-area {
+  .mission-image {
+    border-radius: 1rem;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+.list-style-rounded {
+    li {
+      list-style: none;
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: var(--bColor);
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &::before {
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 0.8rem;
+        width: 0.8rem;
+        height: 0.8rem;
+        background: var(--primary-color);
+        transform: rotate(45deg);
+      }
+    }
+  }

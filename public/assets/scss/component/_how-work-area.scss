@@ -1,0 +1,90 @@
+/*===============================
+#.how-work-area
+=================================*/
+.process-wrap {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2.4rem;
+    .single-process {
+        position: relative;
+        &:nth-child(even) {
+            &:after {
+                background: url(../images/progress-arrow-2.svg);
+            }
+        }
+        &:nth-child(odd) {
+            &:after {
+                background: url(../images/progress-arrow-1.svg);
+            }
+        }
+        &:last-child {
+            &::after {
+                display: none;
+            }
+        }
+        &::after {
+            position: absolute;
+            content: '';
+            left: 80%;
+            top: 3rem;
+            width: 15rem;
+            height: 4rem;
+            background-repeat: no-repeat !important;
+            background-size: contain !important;
+        }
+        .process-count {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 10rem;
+            height: 10rem;
+            margin-bottom: 3.5rem;
+            border-radius: 50%;
+            background: var(--primary-color);
+            font-size: 5rem;
+            font-weight: 700;
+            color: var(--white)
+        }
+        .process-tiele {
+            margin-bottom: 1.5rem;
+            font-size: 2.8rem;
+            font-weight: 600;
+            color: var(--tColor);
+        }
+        .process-content {
+            margin: 0;
+            font-size: 1.8rem;
+            color: var(--bColor);
+        }
+    }
+}
+
+@media (max-width:1199px	) {
+    .process-wrap .single-process .process-tiele {
+        font-size: 2.2rem;
+    }
+    .process-wrap .single-process::after {
+        width: 11rem;
+    }
+}
+@media (max-width:991px	) {
+    .process-wrap {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .process-wrap .single-process::after {
+       display: none;
+    }
+    .process-wrap .single-process .process-tiele {
+        font-size: 2.8rem;
+    }    
+}
+@media (max-width:720px	) {
+    .process-wrap {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 575px) {
+    .process-wrap {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

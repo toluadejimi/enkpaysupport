@@ -1,0 +1,92 @@
+/*
+
+
+---------------------- common content ----------
+1.body reset content
+#.header-area
+#.footer-area
+#.breadcrumb-area
+#.privacy-policy
+#.hero-banner-area
+#.section-title
+#.service-area
+#.about-area
+#.how-work-area
+#.features-area
+#.price-area
+#.products
+#.testimonial-area
+#.faq-area
+#.callto-action
+#.blog-area
+#.contact-area
+#.single-post
+#.sticky-posts
+#.latest-blog
+#.sidebar-area
+#.table
+#.mining-request
+#.modal
+#.tabs
+#.register-area
+#.settings
+#.deposit-method
+#.latest-transaction-area
+#.card-area
+#.mission-area
+#.team-area
+#.counter-area
+
+
+
+*/
+
+/*===============================
+#.counter-area
+=================================*/
+
+// variable
+@import "variable/_variable.scss";
+
+// mixin
+@import "mixin/_mixin.scss";
+
+// body reset content
+@import "reset/_predefine.scss";
+
+// component content
+@import "component/header.scss";
+@import "component/buttons.scss";
+@import "component/footer.scss";
+@import "component/breadcrumb";
+@import "component/privacy-policy";
+@import "component/hero-banner";
+@import "component/section-title";
+@import "component/service-area";
+@import "component/about-area";
+@import "component/how-work-area";
+@import "component/features-area";
+@import "component/price-area";
+@import "component/products";
+@import "component/testimonials";
+@import "component/faq-area";
+@import "component/callto-action";
+@import "component/blog-area";
+@import "component/contact-area";
+@import "component/single-post";
+@import "component/sticky-posts";
+@import "component/latest-blog";
+@import "component/sidebar-area";
+@import "component/table";
+@import "component/mining-request";
+@import "component/modal";
+@import "component/tabs";
+@import "component/register-area";
+@import "component/settings";
+@import "component/deposit-method";
+@import "component/latest-transaction-area";
+@import "component/card-area";
+@import "component/mission-area";
+@import "component/team-area";
+@import "component/counter-area";
+

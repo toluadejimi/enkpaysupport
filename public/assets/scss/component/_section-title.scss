@@ -1,0 +1,101 @@
+/*===============================
+#.section-title
+=================================*/
+.section-title {
+  margin-bottom: 5rem;
+  &.text-start {
+    .sub-title {
+      margin-left: 5rem;
+    }
+  }
+  .sub-title {
+    display: inline-block;
+    position: relative;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--tColor);
+    margin-bottom: 2.5rem;
+    &::before {
+      position: absolute;
+      content: "";
+      width: 3.5rem;
+      height: 0.2rem;
+      background-color: var(--primary-color);
+      right: calc(100% + 12px);
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &::after {
+      position: absolute;
+      content: "";
+      width: 3.5rem;
+      height: 0.2rem;
+      background-color: var(--primary-color);
+      left: calc(100% + 12px);
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  .title {
+    margin-bottom: 1.5rem;
+    font-size: 5rem;
+    font-weight: 700;
+    color: var(--tColor);
+  }
+  .content {
+    margin-bottom: 0;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--bColor);
+  }
+}
+// section-top-title
+.section-top-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #eef0f2;
+  padding-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  grid-gap: 2rem;
+  .title {
+    margin: 0;
+    font-size: 3.2rem;
+    font-weight: 600;
+    color: var(--tColor);
+  }
+  .earning-repost {
+    display: flex;
+    justify-content: flex-end;
+    .earning-repost-single {
+      padding: 0 2rem;
+      border-left: 1px solid #EEF0F2;
+      h3 {
+        font-size: 2.4rem;
+        font-weight: 700;
+        color: var(--tColor);
+      }
+      h4 {
+        margin: 0;
+        font-size: 1.4rem;
+        color: var(--bColor);
+      }
+      &:first-child {
+        border: none;
+      }
+    }
+  }
+}
+@media (max-width: 1199px) {
+  .section-title .title {
+    font-size: 4rem;
+  }
+}
+@media (max-width: 575px) {
+  .section-title .title {
+    font-size: 3.2rem;
+  }
+  .section-top-title .title {
+    font-size: 2.8rem;
+  }
+}

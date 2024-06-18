@@ -1,0 +1,107 @@
+/*===============================
+#.sticky-posts
+=================================*/
+.sticky-posts {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2rem;
+  .post-thumbnail {
+    img {
+      width: 100%;
+      height: 700px;
+      object-fit: cover;
+    }
+  }
+  .post-info {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 8rem;
+    display: grid;
+    align-items: flex-end;
+    .post-info-wrap {
+      display: flex;
+      flex-flow: row wrap;
+      grid-gap: 2rem;
+      align-items: flex-end;
+    }
+    .post-title {
+      max-width: 80%;
+      font-size: 5rem;
+      font-weight: 700;
+      color: var(--white);
+      a {
+        color: var(--white);
+        transition: $transition;
+        &:hover {
+          color: var(--primary-color);
+        }
+      }
+    }
+    p {
+      margin: 0;
+      max-width: 55%;
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: var(--white);
+    }
+    .post-info-left {
+      flex: 1;
+    }
+    .view-more-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 10rem;
+      height: 10rem;
+      border-radius: 50%;
+      background: var(--primary-color);
+      color: var(--white);
+      transition: $transition;
+      &:hover {
+        background: var(--hover-color);
+      }
+    }
+  }
+}
+@media (max-width: 1199px) {
+  .sticky-posts .post-info {
+    padding: 4rem;
+  }
+  .sticky-posts .post-info .post-title {
+    max-width: 80%;
+    font-size: 4rem;
+  }
+  .sticky-posts .post-info p {
+    max-width: 80%;
+  }
+}
+@media (max-width: 991px) {
+  .sticky-posts .post-info .post-info-left {
+    flex: auto;
+  }
+  .sticky-posts .post-info .post-title {
+    max-width: 100%;
+  }
+  .sticky-posts .post-info p {
+    max-width: 100%;
+  }
+  .sticky-posts .post-info {
+    padding: 4rem 3rem;
+  }
+}
+@media (max-width: 575px) {
+  .sticky-posts .post-info .post-title {
+    font-size: 3.2rem;
+  }
+  .sticky-posts .post-info .view-more-btn {
+    width: 6rem;
+    height: 6rem;
+  }
+  .sticky-posts .post-info p {
+    font-size: 1.6rem;
+  }
+}

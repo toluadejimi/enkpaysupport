@@ -1,0 +1,53 @@
+/*===============================
+#.breadcrumb-area
+=================================*/
+.breadcrumb-area {
+  padding: 21rem 0 14rem 0;
+  background: var(--primary-gradient);
+  .page-title {
+    margin-bottom: 1.5rem;
+    font-size: 5rem;
+    font-weight: 700;
+    color: var(--white);
+  }
+  .breadcrumb-items {
+    display: flex;
+    flex-flow: row wrap;
+    grid-column-gap: 2rem;
+    justify-content: center;
+    li {
+      position: relative;
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: var(--primary-color);
+      a {
+        color: var(--white);
+        transition: $transition;
+        &:hover {
+          color: var(--primary-color);
+        }
+      }
+      &:after {
+        position: absolute;
+        content: "/";
+        left: calc(100% + 8px);
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--white);
+      }
+      &:last-child {
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  .breadcrumb-area {
+    padding: 18rem 0 9rem 0;
+  }
+  .breadcrumb-area .page-title {
+    font-size: 4rem;
+  }
+}

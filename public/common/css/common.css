@@ -1,0 +1,72 @@
+.bg-pink-500 {
+    color: #fff;
+    background: #e83e8c;
+}
+.bg-green-500 {
+    color: #fff;
+    background: #53c511;
+}
+.agent-msg-new{
+    right: -25px;
+}
+.agent-msg-no-message{
+    right: -10px;
+}
+.customer-msg-no-message{
+    right: 2px;
+}
+.rounded-pill {
+    border-radius: 50rem !important;
+}
+.translate-middle {
+    transform: translate(-50%, -50%) !important;
+}
+.start-100 {
+    left: 85% !important;
+}
+
+.ticket-tracking-id{
+  padding: 12px 13px;
+  border-radius: 10px;
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 0.9rem;
+  line-height: 19px;
+  color: #ffffff;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+ .ticket-info-img img {
+     width: 55px;
+ }
+
+.ticket-info-img {
+    display: flex;
+    gap: 15px;
+    align-items: center!important;
+    margin-bottom: 27px;
+}
+.ticket-info-img .sf-img{
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.sf-img{
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.ticket-user-name{
+    display: block!important;
+}
+.ticket-user-name h5,p {
+    font-size: 15px;
+    /*font-weight: 600;*/
+    margin-bottom: 2px;
+}
+.toast-message {
+    font-size: 18px;
+}

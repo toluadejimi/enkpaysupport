@@ -1,0 +1,278 @@
+/*===============================
+#.price-area
+=================================*/
+.price-area {
+  margin-top: -500px;
+}
+.single-price {
+  padding: 2rem;
+  background: var(--white);
+  border-radius: 1rem;
+  border: 1px solid #eaeaea;
+  overflow: hidden;
+  .price-header {
+    border-bottom: 1px solid #eaeaea;
+    padding: 2rem 0;
+    .plane-name {
+      margin-bottom: 2rem;
+      font-size: 2.8rem;
+      font-weight: 600;
+      color: var(--tColor);
+    }
+    .starting-price {
+      margin-top: 3rem;
+      h4 {
+        font-size: 1.8rem;
+        font-weight: 500;
+        color: var(--tColor);
+      }
+      .price {
+        margin: 0;
+        font-size: 5rem;
+        font-weight: 700;
+        color: var(--tColor);
+        sub {
+          font-size: 1.8rem;
+          font-weight: 400;
+          color: var(--bColor);
+          bottom: 0;
+        }
+      }
+    }
+  }
+  .price-body {
+    padding: 2rem 0 1rem 0;
+    h3 {
+      margin-bottom: 2rem;
+      font-size: 2.4rem;
+      font-weight: 600;
+      color: var(--tColor);
+    }
+    .feature-list {
+      li {
+        margin-bottom: 2rem;
+        font-size: 1.8rem;
+        font-weight: 400;
+        color: var(--bColor);
+        &:last-child {
+          margin-bottom: 0;
+        }
+        label {
+          display: inline-flex;
+          align-items: center;
+          cursor: pointer;
+        }
+        input[type="checkbox"] {
+          -webkit-appearance: none;
+          appearance: none;
+          margin: 0;
+          margin-right: 2rem;
+          width: 2.5rem;
+          height: 2.5rem;
+          border-radius: 6px;
+          border: 1px solid #dbdbdb;
+          &:after {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            content: "\f00c";
+            font-family: $fontAesome;
+            font-weight: 700;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            font-size: 1.8rem;
+            color: var(--white);
+          }
+          &:checked {
+            background-color: var(--primary-color);
+            &::after {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+    .selected-module {
+      margin: 3rem 0;
+      p {
+        margin: 0;
+        font-size: 1.7rem;
+        font-weight: 400;
+        color: var(--bColor);
+      }
+    }
+    .box-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 1rem;
+      .single-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 8.8rem;
+        grid-gap: 0.5rem;
+        border: 1px dashed #d1d1d1;
+        padding: 1.5rem;
+        input {
+          width: 100%;
+          border: none;
+          text-align: center;
+          font-size: 1.8rem;
+          font-family: $bodyFont;
+          font-weight: 400;
+          color: var(--bColor);
+        }
+        span {
+          font-size: 1.4rem;
+          font-weight: 400;
+          color: var(--bColor);
+        }
+      }
+    }
+  }
+  .price-footer {
+    padding: 3rem 0;
+  }
+  &.recommend-plan {
+    position: relative;
+    border-color: var(--primary-color);
+    background-color: var(--primary-color);
+    &::before {
+      position: absolute;
+      content: "\f005";
+      font-family: $fontAesome;
+      font-weight: 700;
+      width: 160px;
+      height: 70px;
+      background-color: var(--white);
+      right: -60px;
+      top: -10px;
+      transform: rotate(45deg);
+      color: var(--primary-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 1.5rem;
+      font-weight: 2rem;
+    }
+    .price-header {
+      border-bottom: 1px solid var(--white);
+      padding: 3rem 0;
+      color: var(--white);
+      .plane-name {
+        color: var(--white);
+      }
+      .starting-price {
+        margin-top: 3rem;
+        h4 {
+          color: var(--white);
+        }
+        .price {
+          color: var(--white);
+          sub {
+            color: var(--white);
+          }
+        }
+      }
+    }
+    .price-body {
+      padding: 4rem 0 3rem 0;
+      h3 {
+        color: var(--white);
+      }
+      .feature-list {
+        li {
+          color: var(--white);
+          input[type="checkbox"] {
+            border: 1px solid var(--white);
+            &:after {
+              color: var(--primary-color);
+            }
+            &:checked {
+              background-color: var(--white);
+            }
+          }
+        }
+      }
+      .selected-module {
+        p {
+          color: var(--white);
+        }
+      }
+      .box-list {
+        .single-box {
+          border: 1px dashed var(--white);
+          input {
+            background: transparent;
+            color: var(--white);
+          }
+          span {
+            color: var(--white);
+          }
+        }
+      }
+    }
+    .btn-primary {
+      background: white;
+      color: var(--bColor);
+      &:hover {
+        color: var(--white);
+      }
+    }
+  }
+}
+.price-tabs {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  background: var(--primary-color);
+  grid-column-gap: 0.3rem;
+  margin: 0 auto;
+  max-width: 320px;
+  transform: translateY(-155px);
+  .nav-link {
+    padding: 1.4rem 2.8rem;
+    border-radius: 1rem;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--white);
+    border: none;
+    &:hover {
+      border: none;
+    }
+    &.active {
+      background-color: var(--white);
+      color: var(--tColor);
+    }
+  }
+}
+@media (max-width: 1399px) {
+  .single-price .price-body .box-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 1199px) {
+  .single-price .price-body .box-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 991px) {
+  .price-tabs {
+    transform: translateY(-95px);
+  }
+}
+@media (max-width: 767px) {
+  .price-tabs {
+    margin-bottom: 5rem;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 575px) {
+  .single-price .price-header .starting-price .price {
+    font-size: 4rem;
+  }
+}

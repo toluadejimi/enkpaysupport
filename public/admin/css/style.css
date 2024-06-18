@@ -1,0 +1,1133 @@
+:root {
+    --navbar-bg: #fff;
+    --navbar-bg-dark: #131517;
+
+    --footer-bg: #fff;
+    --footer-bg-dark: #131517;
+
+    --white-color: #fff;
+    --black-color: #000;
+
+    --bg-primary: #fff;
+    --bg-primary-dark: #131517;
+    --bg-secondary: #F8F8F8;
+    --bg-secondary-dark: #0B0B0B;
+
+    --bg-icon: #E5FAF3;
+
+    --status-btn-bg: #F5F5F5;
+    --status-btn-bg-dark: #24282C;
+
+    --bg-gradient: linear-gradient(180deg, #296FEB 0%, #0C36C9 100%);
+    --bg-gradient-hover: linear-gradient(180deg, #0C36C9 0%, #296FEB 100%);
+
+    --heading-color: #0C0825;
+    --heading-color-dark: #fff;
+    --body-font-color: #737C91;
+    --body-font-color-dark: #fff;
+
+    --border-color: rgba(0, 0, 0, 0.15);
+    --border-color-dark: rgba(255, 255, 255, 0.1);
+    --border-color-2: #A5ABBA;
+
+    --primary-color: #0E3BCC;
+    --primary-hover-color: #3686FC;
+
+    --blue-color: #0066D9;
+    --blue-color-transparent: rgba(54, 134, 252, 0.08);
+
+    --secondary-color: #4831DB;
+    --secondary-hover-color: #4831DB;
+
+    --red-color: #FF3D3D;
+    --danger-color: #FF3D3D;
+    --red-color-hover: #dc3545;
+
+    --yellow-color: #FBBF37;
+    --orange-color: #FF794D;
+    --orange-color-transparent: rgba(255, 121, 77, 0.08);
+
+    --green-color: #1EBD53;
+    --green-color-hover: #0d943a;
+    --green-color-transparent: rgba(30, 189, 83, 0.08);
+
+    --body-font-family: 'Poppins', sans-serif;
+}
+
+.tbl-user-image {
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.avatar-xs {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.rounded {
+    border-radius: var(--bs-border-radius) !important;
+}
+
+.table .status-btn {
+    min-width: 100px;
+}
+
+.status-btn-blue {
+    background-color: #E7F0FF;
+    color: #0d6efd;
+}
+
+.status-btn {
+    padding: 7px 15px !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.theme-btn {
+    cursor: pointer !important;
+}
+
+.gateway-image {
+    width: 80px;
+    border: 2px solid #FAFAFC;
+    padding: 10px;
+    border-radius: 10%;
+}
+
+.ml-10 {
+    margin-left: 10px;
+}
+
+.pr-0 {
+    padding-right: 0px !important;
+}
+
+
+.font-size-small {
+    font-size: 12px !important;
+    color: #1e2125 !important;
+}
+
+.ml-5 {
+    margin-left: 5px !important;
+}
+
+.mt-28 {
+    margin-top: 28px;
+}
+
+
+.form-check-input {
+    width: 3em !important;
+    height: 1.5em !important;
+    margin-top: 0.25em;
+    vertical-align: top;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: 1px solid rgba(0, 0, 0, .25);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+}
+
+.card-width {
+    width: 18rem;
+}
+
+
+.zoom:hover {
+    -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Safari 3-8 */
+    transform: scale(1.1);
+}
+
+.width-100 {
+    width: 100%;
+}
+
+.active-status {
+    color: green;
+    font-weight: bold;
+    padding: 10px 30px;
+    border-radius: 5px;
+    background: rgba(0, 128, 0, 0.1);
+}
+
+.deactivate-status {
+    color: red;
+    font-weight: bold;
+    padding: 10px 30px;
+    border-radius: 5px;
+    background: rgba(255, 0, 0, 0.1);
+}
+
+.cancel-status {
+    color: #ff2525;
+    font-weight: bold;
+    padding: 10px 30px;
+    border-radius: 5px;
+    background: rgb(255, 193, 193);
+}
+
+.growing-company {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #212121;
+    border-radius: 1rem;
+    /*height: 100px;*/
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.error-message {
+    z-index: 9;
+}
+
+/* .modal {
+    z-index: 9999 !important;
+} */
+
+.datatable-td {
+    padding: 14px 20px;
+}
+
+/*-------------------------------------------
+    9. Pricing Plan CSS Start
+-------------------------------------------*/
+.choose-plan-area-title,
+.payment-method-area-title {
+    margin-bottom: 25px;
+    margin-top: -5px;
+}
+
+.price-card-item {
+    border: 0.776515px solid rgba(0, 0, 0, 0.1);
+    border-radius: 15.5303px;
+    background-color: var(--bg-primary);
+}
+
+.price-title span {
+    color: #727B8F;
+}
+
+hr {
+    border: 1.6px solid rgba(0, 0, 0, 0.1);
+}
+
+.pricing-features {
+    margin: 18px 0 11px;
+}
+
+.price-check-icon {
+    width: 17px;
+    height: 17px;
+}
+
+/* Payment Subscription toggle Start */
+.payment-subscription-switch .form-check-input {
+    width: 4.55em;
+    height: 2.25em;
+}
+
+/* Payment Subscription toggle End */
+
+/*-------------------------------------------
+    9. Pricing Plan CSS End
+-------------------------------------------*/
+
+/*-------------------------------------------
+    10. Payment Method CSS Start
+-------------------------------------------*/
+@media (min-width: 576px) {
+
+    #paymentMethodModal.big-modal .modal-dialog {
+        max-width: 1250px;
+    }
+}
+
+@media (min-width: 1400px) {
+    #paymentMethodModal .col-xxl-3 {
+        /* width: 187px; */
+        width: 20%;
+    }
+}
+
+.payment-method-item {
+    background-color: var(--bg-primary);
+    padding: 20px 20px;
+}
+
+.payment-method-item-title {
+    border-radius: 60px;
+    padding: 8px 20px;
+    min-height: 30px;
+}
+
+.payment-method-img {
+    margin-top: 30px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.payment-method-item .theme-btn-outline {
+    padding: 9px 20px !important;
+}
+
+/*-------------------------------------------
+    10. Payment Method CSS End
+-------------------------------------------*/
+
+/*-------------------------------------------
+    11. Subscription Page CSS Start
+-------------------------------------------*/
+.current-plan.plan-usage {
+    border-top: 1px solid var(--border-color);
+}
+
+.plan-usage-list-dot {
+    background-color: #737C90;
+    height: 5px;
+    width: 5px;
+    margin-top: 13px !important;
+}
+
+.subscription-plan-box .theme-btn,
+.cancel-subscription .theme-btn-red {
+    padding: 8px 22px !important;
+    line-height: 24px;
+}
+
+/*-------------------------------------------
+    11. Subscription Page CSS End
+-------------------------------------------*/
+
+@media (min-width: 576px) {
+    .big-modal .modal-dialog {
+        max-width: 1212px;
+    }
+}
+
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 740px;
+    }
+}
+
+.pb-30 {
+    padding-bottom: 30px;
+}
+
+.pb-30 {
+    padding-bottom: 30px;
+}
+
+.payment-subscription-switch .form-check-input {
+    width: 4.55em;
+    height: 2.25em;
+}
+
+label {
+    margin-bottom: 10px;
+}
+
+.modal .btn-close {
+    /*color: var(--body-font-color) !important;*/
+    /* background-image: none; */
+    /*font-size: 18px;*/
+    /*position: relative;*/
+    /*top: -5px;*/
+    /*-----*/
+    color: var(--body-font-color) !important;
+    /*background-image: none;*/
+    font-size: 20px;
+    position: relative;
+    top: 11px;
+    padding-right: 23px;
+
+}
+
+/* .modal {
+    z-index: 9999 !important;
+} */
+
+.note-modal {
+    z-index: 1150 !important;
+
+}
+
+.select2-dropdown {
+    z-index: 1150 !important;
+}
+
+
+.payment-method-item {
+    background-color: var(--bg-primary);
+    padding: 20px 20px;
+}
+
+.radius-10 {
+    border-radius: 10px;
+}
+
+.theme-border {
+    border: 1px solid var(--border-color);
+}
+
+.price-card-item-border {
+    border: 0.776515px solid #7dcaf3;
+    border-radius: 15.5303px;
+    background-color: var(--bg-primary);
+}
+
+.ticket-circles {
+    width: 60px;
+    height: 60px;
+}
+
+.ticket-circles .percircle > span {
+    font-size: 12px;
+    font-weight: 700;
+    color: #0c0825;
+}
+
+.bg-pink-500 {
+    color: #fff;
+    background: #e83e8c;
+}
+
+.rounded-pill {
+    border-radius: 50rem !important;
+}
+
+.translate-middle {
+    transform: translate(-50%, -50%) !important;
+}
+
+.start-100 {
+    left: 85% !important;
+}
+
+.top-0 {
+    top: 0 !important;
+}
+
+.position-absolute {
+    position: absolute !important;
+}
+
+
+.ticket-assign-name {
+    background: antiquewhite;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    margin-right: -10px;
+}
+
+.header-profile-user-img {
+    margin-right: -10px;
+    width: 30px;
+    height: 30px;
+}
+
+.ticket-assign-name h5 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #f8a809;
+}
+
+
+.min-w-95 {
+    min-width: 95px !important;
+}
+
+.min-w-300 {
+    min-width: 300px !important;
+}
+
+.ad-pie-chart {
+    height: 500px
+}
+
+.conversion-list-dropdown-toggle::after {
+    display: none;
+}
+
+
+/* Developer sohel */
+.color-272e35 {
+    color: #272E35;
+}
+
+.mt-50 {
+    margin-top: 50px;
+}
+
+.p-25 {
+    padding: 25px;
+}
+
+.pb-10 {
+    padding-bottom: 10px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.right-10 {
+    right: 10px;
+}
+
+.w-30 {
+    width: 30px;
+}
+
+.h-30 {
+    height: 30px;
+}
+
+.sf-bg-size-10 {
+    background-size: 10px;
+}
+
+.sf-shadow-one {
+    box-shadow: 5px 5px 20px rgb(0 0 0 /50%) !important;
+}
+
+.modal {
+    --bs-modal-zindex: 10000;
+}
+
+.modal-close-btn {
+    padding: 0 !important;
+    top: 20px !important;
+    right: 20px !important;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    background-size: 10px;
+    box-shadow: 5px 5px 20px rgb(0 0 0 /50%) !important;
+    z-index: 1;
+}
+
+.modal-close-btn-2 {
+    padding: 0 !important;
+    top: 0px !important;
+    right: 20px !important;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    background-size: 10px;
+    box-shadow: 5px 5px 20px rgb(0 0 0 /50%) !important;
+    z-index: 1;
+}
+
+.sf-choosePlanModal-title {
+    font-size: 30px;
+    font-weight: 700;
+    color: #272E35;
+}
+
+.sf-choosePlanModal-content {
+}
+
+.sf-choosePlanModal-content .planName {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.sf-choosePlanModal-content .price-title {
+    font-size: 36px;
+    color: #272E35;
+}
+
+.sf-choosePlanModal-content .pricing-features {
+    margin: 18px 0;
+}
+
+.sf-choosePlanModal-content .pricing-features li {
+    padding-bottom: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #727B8F;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sf-choosePlanModal-content .pricing-features li:last-child {
+    padding-bottom: 0;
+}
+
+.sf-choosePlanModal-content .pricing-features li .icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #727B8F;
+    color: #fff;
+    font-size: 10px;
+}
+
+table tr.child td.child ul.dtr-details li {
+    display: flex;
+}
+
+.purchase-code {
+    border-radius: 10px 10px 0px 0px;
+    padding: 15px 30px;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.purchase-red {
+    background: #ffe1e3;
+}
+
+.purchase-green {
+    background: #D4EFDD;
+}
+
+.purchase-text {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%;
+    color: #0c0825;
+}
+
+.purchase-view-btu button {
+    border: none;
+    border-radius: 4px;
+    background: #25a3ff;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    padding: 5px 0px;
+    color: #fff;
+    width: 100px;
+}
+
+.purchase-model-text {
+    border-radius: 10px;
+    border: 1px solid #eef0f2;
+    background: #fff;
+    box-shadow: 0px 0px 30px 0px rgba(163, 177, 204, 0.12),
+    0px 10px 60px 0px rgba(163, 177, 204, 0.1);
+    padding: 20px;
+}
+
+.purchase-details-header h5 {
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+}
+
+.purchase-details-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #dadee7;
+    margin-bottom: 20px;
+}
+
+
+.item-icon-client img {
+    width: 100px;
+    height: auto;
+}
+
+.client-details-bg {
+    border-radius: 4px;
+    border: 1px solid #dadee7;
+    background: #f7f8f9;
+}
+
+.client-border-details {
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    padding: 16px 15px;
+    border-bottom: 1px solid #dadee7;
+}
+
+.item-icon-client {
+    padding: 20px 15px;
+    border-bottom: 1px solid #dadee7;
+}
+
+.item-icon {
+    margin-bottom: 14px;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+}
+
+.client-item-details {
+    padding: 15px 12px;
+}
+
+.single-client-item-info > p {
+    display: inline-block;
+}
+
+.single-client-item-info {
+    display: flex;
+    margin-bottom: 12px;
+}
+
+.client-item-info {
+    min-width: 130px;
+    display: inline-block;
+}
+
+.client-item-info h5 {
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+}
+
+@media (min-width: 600px) {
+    .dropdown-menu-lg {
+        width: 368px;
+    }
+
+    .scheduleArea {
+        width: 300px;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar-header .dropdown {
+        position: static
+    }
+
+    .navbar-header .dropdown .dropdown-menu {
+        left: 10px !important;
+        right: 10px !important
+    }
+}
+
+@media (max-width: 380px) {
+    .navbar-brand-box {
+        display: none
+    }
+}
+
+.noti-icon i {
+    font-size: 20px;
+    color: #ABB1BF;
+}
+
+/*.noti-icon .noti-dot {*/
+/*    position: absolute;*/
+/*    display: inline-block;*/
+/*    height: 6px;*/
+/*    width: 6px;*/
+/*    background-color: var(--red-color);*/
+/*    border-radius: 50%;*/
+/*    top: 26px;*/
+/*    right: 7px;*/
+/*}*/
+
+.notification-item .d-flex {
+    padding: .75rem 1rem
+}
+
+.notification-item .d-flex:hover {
+    background-color: #f8f9fa;
+}
+
+.avatar-xs {
+    width: 40px;
+}
+
+.avatar-title {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: 1px solid var(--white-color);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-weight: 500;
+    height: 100%;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 100%;
+}
+
+
+.rounded-circle.avatar-xs.fit-image.header-profile-user {
+    height: 30px;
+    width: 30px;
+}
+
+.notificationBox {
+    padding: 22px 20px;
+    border-radius: 10px;
+}
+
+.notificationsHeading {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 13px;
+    align-items: center;
+    border-bottom: 1px solid rgb(115 124 144 / 10%);
+}
+
+.notificationsHeading h5 {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+span.successColor {
+    color: #6659FF;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.notification-item img {
+    min-width: 25px;
+    height: auto;
+}
+
+.notification-item h6 {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+a.notification-item p {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.single-notifi {
+    display: flex;
+    gap: 11px;
+    align-items: center;
+    padding: 17px 0;
+    border-bottom: 1px solid rgb(115 124 144 / 10%);
+}
+
+.single-notifi:hover h6 {
+    color: #6659FF;
+}
+
+.page-content {
+    padding: 0 calc(30px/2) 0 calc(30px/2);
+}
+
+section.dashboard-area {
+    margin-top: 29px;
+}
+
+.title-area {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+.dashboard-text h2 {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 33.6px;
+    color: #0c0825;
+}
+/* create ticket area start */
+
+.create-ticket {
+    background: #fff;
+    padding: 27px 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.create-ticket .note-btn {
+    background: transparent;
+    color: #737c90;
+}
+
+.create-ticket .note-toolbar {
+    background: #f7f8f9;
+}
+
+.agree-box input[type="checkbox"] {
+    accent-color: #6659ff;
+    width: 20px;
+    height: 20px;
+    border-radius: 6px;
+    vertical-align: middle;
+    border: 1px solid #d8d6d6;
+    margin-right: 10px;
+}
+
+.agree-box {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    color: #737C90;
+    flex-direction: column;
+    gap: 24px;
+}
+.agree-box a {
+    color: #6659ff;
+    text-decoration: underline;
+}
+button.delete-btu {
+    background: #ff794d;
+}
+.select2-container--default .select2-results > .select2-results__options {
+    font-size: 14px;
+}
+.note-placeholder {
+    color: #737c90 !important;
+}
+.note-editor.note-airframe,
+.note-editor.note-frame {
+    border: 1px solid #dadee7;
+}
+.table.table.ZaideskTable.gapsshort tbody tr td div {
+    gap: 15px;
+}
+.customer-ticket-create {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #DADEE7;
+    padding: 15px;
+    color: #737C90;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+    height: 433px;
+}
+/* create ticket area end */
+.notifi-img img {
+    width: 40px;
+    height: 40px;
+}
+
+/* ---------------------
+Notification are start
+------------------------*/
+
+.view-ticket-area {
+    position: relative;
+}
+
+.dateNotifi {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 23px;
+}
+
+.singleNotifi {
+    padding: 30px 20px 21px 30px;
+    background: #fff;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.singleNotifi {
+    display: flex;
+    gap: 15px;
+}
+
+.notifiUser img {
+    width: 50px;
+    height: auto;
+}
+
+.notifiInfoText {
+    width: 100%;
+}
+
+.notifiTitle {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.notifiTitle h5 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+p.notifiText {
+    margin-bottom: 14px;
+    margin-top: 7px;
+}
+
+.notifiCode {
+    color: #26a4ff;
+    background: #eef8ff;
+    border: 1px solid #26a4ff;
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.notifiBtu {
+    display: flex;
+    gap: 15px;
+}
+
+.notifiTime {
+    display: flex;
+    gap: 22px;
+    align-items: center;
+}
+
+span.iconNotifi .ellipsisDote i {
+    font-size: 24px;
+    color: #a5abba;
+    cursor: pointer;
+}
+
+span.iconNotifi {
+    position: relative;
+}
+
+.editPart {
+    position: absolute;
+    width: 150px;
+    padding: 8px;
+    border-radius: 4px;
+    box-shadow: 2px 10px 15px 0 rgb(204 204 204 / 33%);
+    right: 2px;
+    top: 24px;
+    display: none;
+    background: #fff;
+    z-index: 7;
+}
+
+.coustomPart {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #737c90;
+}
+
+.coustomPart:hover {
+    background: #f3f2ff;
+    color: #6659ff;
+}
+
+.coustomPart:hover svg path {
+    stroke: #6659ff;
+}
+
+.showeditPart {
+    display: inline;
+}
+
+.overlayClass {
+    position: absolute;
+    background: #bb242400;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* ---------------------
+Notification are start
+----------------- */
+.show-of {
+    box-shadow: 2px 10px 15px rgb(204 204 204 / 33%);
+    padding: 8px;
+    border-radius: 10px;
+    background-color: #fff;
+    position: absolute;
+    z-index: 57;
+    top: 27px;
+    right: 31px;
+    display: none;
+}
+
+.showActive {
+    display: inline;
+    transition: none;
+}
+
+.notifi-close-btu {
+    display: flex;
+    justify-content: space-between;
+    gap: 55px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    padding: 5px 10px;
+    font-weight: 600;
+    border-radius: 5px;
+    align-items: center;
+}
+
+.notifi-close-btu:hover {
+    background: #f3f2ff;
+    color: #6659ff;
+}
+
+.notifi-close-btu:hover p {
+    color: #6659ff;
+}
+
+.note-editable {
+    font-size: 14px;
+}
+
+.note-placeholder {
+    font-size: 14px;
+}
+
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+    border-color: #eef0f2;
+}
+
+div.dataTables_wrapper div.dataTables_info {
+    padding-bottom: 11px;
+}
+
+/* Notification are end */

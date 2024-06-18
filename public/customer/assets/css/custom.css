@@ -1,0 +1,150 @@
+.margin-left-3-percent{
+    margin-left:3%;
+}
+
+.text-dark-color{
+    color: #5c636a !important;
+}
+
+
+/* The popup chat - hidden by default */
+.chat-popup {
+    display: none;
+    position: fixed;
+    bottom:10px;
+    right: 0px;
+    z-index: 999;
+    height: 580px;
+}
+
+/* Add styles to the form container */
+.form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+}
+
+/* Full-width textarea */
+.form-container textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    resize: none;
+}
+
+.msg-board{
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    resize: none;
+    height: 565px;
+}
+
+/* When the textarea gets focus, do something */
+.form-container textarea:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+/* Set a style for the submit/send button */
+.form-container .btn {
+    background-color: #6659FF;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+    background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+}
+
+.round-button {
+    background: #6659FF;
+    color:#f5f5f5;
+    border: 2px solid #f5f5f5;
+    cursor: pointer;
+    position: fixed;
+    bottom: 23px;
+    right: 28px;
+    width:80px;
+    height:80px;
+    line-height:80px;
+    border-radius: 50%;
+    text-align:center;
+    text-decoration:none;
+    box-shadow: 0 0 3px gray;
+    font-size:20px;
+    font-weight:bold;
+}
+.round-button:hover {
+    background: #777555;
+}
+
+.open-button {
+    background: #555777;
+    color:#f5f5f5;
+    border: 2px solid #6659FF;
+    cursor: pointer;
+    position: fixed;
+    bottom: 23px;
+    right: 28px;
+    width:80px;
+    height:80px;
+    line-height:80px;
+    border-radius: 50%;
+    text-align:center;
+    text-decoration:none;
+    box-shadow: 0 0 3px gray;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.icon-size{
+    font-size: 25px;
+}
+
+.chart-close-btn{
+    font-size: 18px; float: right;
+    cursor: pointer;
+}
+.chart-data{
+    border-radius: 12px; padding: 5px;
+}
+.chat-position-right{
+    float: right;
+}
+.chat-position-left{
+    float: left;
+}
+.chat-custom-bg-for-customer{
+    background: #eafaea;
+}
+.chat-custom-bg-for-agent{
+    background: #e8e9ea;
+}
+
+.scroll{
+    overflow-y: auto;
+}
+
+.chat-user-img img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.chat-user-img{
+    flex: 0 0 auto;
+}

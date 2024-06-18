@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
+<head>
+
+    @include('frontend.layouts.meta')
+
+    <title>{{ getGeneralSettingData(getUserIdByTenant(),'app_name') }} - @stack('title' ?? '')</title>
+
+    @include('frontend.layouts.style')
+    @stack('style')
+    <!-- FAVICONS -->
+    <link rel="icon" href="{{ getFileUrl(getGeneralSettingData(getUserIdByTenant(),'app_fav_icon')) }}" type="image/png" sizes="16x16">
+    <link rel="shortcut icon" href="{{ getFileUrl(getGeneralSettingData(getUserIdByTenant(),'app_fav_icon')) }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ getFileUrl(getGeneralSettingData(getUserIdByTenant(),'app_fav_icon')) }}">
+
+    <!-- fonts file -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+
+    @if(getOption('analytics_enable', 0))
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{ getOption('google_analytics_measurement_id') }}"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', "{{ getOption('google_analytics_measurement_id') }}");
+        </script>
+    @endif
+
+</head>
+
+<body>
+
+@if(getOption('app_preloader_status', 0) == STATUS_ACTIVE)
+    <!-- Pre Loader Area start -->
+    <div id="preloader">
+        <div id="preloader_status"><img src="{{getFileUrl(getGeneralSettingData(getUserIdByTenant(),'app_preloader'))}}" alt="img" /></div>
+    </div>
+    <!-- Pre Loader Area End -->
+@endif
+
+
+@yield('content')
+
+@include('frontend.layouts.script')
+@stack('script')
+
+</body>
+</html>

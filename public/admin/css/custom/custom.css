@@ -1,0 +1,152 @@
+.margin-left-3-percent{
+    margin-left:3%;
+}
+
+.text-dark-color{
+    color: #5c636a !important;
+}
+
+.scroll{
+    overflow-y: auto;
+}
+.inbox{
+    height: 500px;
+    /*border-right: 1px solid #dcdee1;*/
+    padding: 20px;
+}
+.inbox-item{
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.inbox-item-link{
+
+}
+
+.char-row-padding-left-0{
+    padding-left: 0px;
+}
+.chat-board{
+    height: 500px;
+    border: 1px solid #98bbee;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 20px;
+}
+
+/* Add styles to the form container */
+.form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+}
+
+/* Full-width textarea */
+.form-container textarea {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background: #f1f1f1;
+    resize: none;
+}
+.scroll{
+    overflow-y: auto;
+}
+
+.chart-data{
+    border-radius: 12px; padding: 5px;
+}
+.chat-position-right{
+    float: right;
+}
+.chat-position-left{
+    float: left;
+}
+.chat-custom-bg-for-customer{
+    background: #eafaea;
+}
+.chat-custom-bg-for-agent{
+    background: #e8e9ea;
+}
+.generate-ai-replay{
+    cursor: pointer;
+}
+
+.coustomPart-new {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #737C90;
+}
+
+.coustomPart-new>span:hover {
+    color: #6659ff;
+    cursor: pointer;
+}
+
+.coustomPart-new svg:hover path {
+    stroke: #ff0a0a;
+    cursor: pointer;
+}
+
+.reply-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.show-read-more .more-text{
+    display: none;
+}
+
+.generate-ai-replay {
+    background: #F3F2FF;
+    color: #6659FF;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.generate-ai-replay:hover {
+    background: #6659FF !important;
+    color: #fff !important;
+}
+
+.editPart.aiReplayBtu.popup {
+    width: 280px;
+    left: 0px;
+}
+
+
+.editPart.top-down {
+    top: 30px !important;
+}
+
+.reply-result a {
+    color: #0d6efd;
+}
+
+.reply-result a:hover {
+    color: #6659FF;
+}
+
+.df-delete-btn{
+    cursor: pointer;
+    text-align: center;
+    color: #e86060;
+}
+.df-delete-btn-disable{
+    cursor: pointer;
+    text-align: center;
+    color: #65676c;
+}
+.df-add-btn {
+    padding: 2px 6px !important;
+    border-radius: 5px !important;
+}

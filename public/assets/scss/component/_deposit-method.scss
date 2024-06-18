@@ -1,0 +1,86 @@
+/*===============================
+#.deposit-method
+=================================*/
+.single-deposit-option {
+  border: 1px solid #eef0f2;
+  border-radius: 4px;
+  .deposit-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    grid-gap: 1rem;
+    padding: 2.5rem;
+    background-color: #fafafa;
+    h3 {
+      margin: 0;
+      font-size: 2rem;
+      font-weight: 500;
+      color: var(--tColor);
+    }
+    .icon {
+        font-size: 2.4rem;
+        line-height: 1;
+        color: #3CA2F7;
+    }
+  }
+  .deposit-body {
+    padding: 2.5rem;
+    .form-group {
+      margin-bottom: 2rem;
+      .form-label {
+        display: block;
+        margin-bottom: 1rem;
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: var(--tColor);
+      }
+      .form-control {
+        width: 100%;
+        height: 4.4rem;
+        border-radius: 4px;
+        border: 1px solid #eef0f2;
+        padding: 0.5rem 1.6rem;
+        font-family: $bodyFont;
+        font-size: 1.3rem;
+        font-weight: 400;
+        color: var(--bColor);
+      }
+      .input-group {
+        .form-control {
+          flex: 1;
+        }
+        .form-select {
+            max-width: 80px;
+        }
+      }
+    }
+    .form-radio-input {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 5rem;
+        border-radius: 4px;
+        border: 1px solid #eef0f2;
+        padding: 0.5rem 1.6rem;
+        font-family: $bodyFont;
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: var(--bColor);
+        cursor: pointer;
+        .form-check-input {
+            width: 1.6rem;
+            height: 1.6rem;
+            border-radius: 50%;
+            border: 1px solid #B7BDC6;
+            line-height: none;
+            margin: 0;
+            box-shadow: none;
+            &:checked {
+                background-color: var(--primary-color);
+            }
+        }
+    }
+  }
+}

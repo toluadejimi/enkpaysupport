@@ -1,0 +1,107 @@
+/*===============================
+#.single-post
+=================================*/
+.single-post {
+  .post-catagory {
+    grid-gap: 1rem;
+  }
+  .post-title {
+    font-size: 5rem;
+    font-weight: 700;
+    color: var(--tColor);
+    margin: 3rem 0;
+  }
+  .post-thumbnail {
+    margin: 6rem 0;
+    img {
+      width: 100%;
+      border-radius: 2rem;
+    }
+  }
+  .post-meta {
+    grid-gap: 1.5rem;
+    flex-flow: row wrap;
+    .author-info {
+      display: flex;
+      align-items: center;
+      .author-thumb {
+        width: 8rem;
+        height: 8rem;
+        object-fit: cover;
+      }
+      .author-detils {
+        flex: 1;
+        margin-left: 1.5rem;
+        .author-name {
+          font-size: 2.4rem;
+          font-weight: 600;
+          color: var(--tColor);
+          a {
+            color: var(--tColor);
+          }
+        }
+        .author-position {
+          margin: 0;
+          font-size: 1.6rem;
+          font-weight: 400;
+          color: var(--bColor);
+        }
+      }
+    }
+    .post-date {
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: var(--bColor);
+    }
+  }
+}
+.blockquote {
+  min-height: 27rem;
+  background: var(--primary-color);
+  border-radius: 1rem;
+  padding: 3rem;
+  margin-bottom: 6rem;
+  .quote-icon {
+    width: 5.6rem;
+    height: 5.6rem;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+  }
+  p {
+    margin: 0 auto;
+    max-width: 90%;
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: var(--white);
+    font-style: italic;
+  }
+}
+
+@media (max-width: 767px) {
+  .single-post .post-title {
+    font-size: 4rem;
+  }
+  .single-post .post-thumbnail {
+    margin: 3rem 0;
+  }
+  .blockquote {
+    margin-bottom: 4rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .single-post .post-title {
+    font-size: 3.6rem;
+  }
+  .single-post .post-meta .author-info .author-thumb {
+    width: 6rem;
+    height: 6rem;
+  }
+  .single-post .post-meta .author-info .author-detils .author-name {
+    font-size: 2rem;
+  }
+  .blockquote p {
+    max-width: 100%;
+    font-size: 2rem;
+  }
+}
