@@ -69,13 +69,7 @@ class   CustomerTicketService
 
     public function store($request)
     {
-//        $envato = Envato::where('tenant_id', auth()->user()->tenant_id)->first();
-//        if($envato?->enable_purchase_code == 1){
-//            $request->validate([
-//                'purchase_code' => 'required',
-////                'domain' => 'required',
-//            ]);
-//        }
+
 
         DB::beginTransaction();
         try {
@@ -181,7 +175,19 @@ class   CustomerTicketService
             //send email notification start
             newTicketEmailNotify($dataObj->id);
             //send email notification end
+
+
+
+            $message = "New Ticket has been created | by  $request->email";
+            send_notification($message);
+
+
             return redirect()->route('customer.ticket.active-ticket')->with('success', __("Ticket created successfully"));
+
+
+
+
+
         } catch (\Exception $exception) {
             DB::rollBack();
             Log::info($exception->getMessage());
