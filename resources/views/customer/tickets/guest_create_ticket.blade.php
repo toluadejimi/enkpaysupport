@@ -37,8 +37,8 @@
                 <div class="row">
                     <div class="col-md-12">
 
-                        <div class="my-3">
-                            <span class="my-2" style="font-size: 13px; color:brown;">We are sorry for any inconveniences, Please make
+                        <div class="my-5">
+                            <span class="my-4" style="font-size: 13px; color:brown;">We are sorry for any inconveniences, Please make
                                 sure you filled your valid email. You will get reply on your email. Thanks</span>
                             <br>
                             <a href="https://www.youtube.com/shorts/Zn_dALbDhSI?feature=share" class="btn btn-danger">Watch
