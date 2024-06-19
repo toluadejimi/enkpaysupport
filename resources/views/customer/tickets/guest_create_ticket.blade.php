@@ -57,6 +57,11 @@
                                             <label class="label-text-title">{{ __('Subject') }} <span>*</span></label>
                                             <input type="text" placeholder="{{ __('Subject') }}" class="formControl"
                                                 name="subject">
+
+                                            <input hidden type="text" value="{{$vendor_id ?? "name" }}"
+                                                   name="vendor_id">
+
+
                                         </div>
                                     </div>
                                     <div class="zi-w-35 zi-lg-w-100">

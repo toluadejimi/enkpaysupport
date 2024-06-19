@@ -61,10 +61,11 @@ class   TicketsController extends Controller
     {
         return $this->ticketService->store($request);
     }
-    public function guestCreateTicket()
+    public function guestCreateTicket(request $request)
     {
         $data['pageTitle'] = 'Create Ticket';
         $data['category'] = Category::where('tenant_id', getTenantId())->get();
+        $data['vendor_id'] = $request->id;
         $data['envato'] = Envato::where('tenant_id', getTenantId())->first();
         $data['dynamicFields'] = DynamicField::where('tenant_id', getTenantId())->orderBy('order', 'ASC')->get();
         return view('customer.tickets.guest_create_ticket', $data);

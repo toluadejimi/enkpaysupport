@@ -207,6 +207,7 @@ class   CustomerTicketService
                 $remember_token = Str::random(64);
                 $google2fa = app('pragmarx.google2fa');
 
+                $vendor_id = $request->vendor_id;
                 $userStatus = USER_STATUS_ACTIVE;
                 if (getOption('email_verification_status', 0) == 1) {
                     $userStatus = USER_STATUS_UNVERIFIED;
@@ -219,7 +220,7 @@ class   CustomerTicketService
                 $user->status = 1;
                 $user->remember_token = $remember_token;
                 $user->status = $userStatus;
-                $user->tenant_id = getTenantId();
+                $user->tenant_id = getTenantId($vendor_id);
                 $user->google2fa_secret = $google2fa->generateSecretKey();
                 $user->save();
             }
@@ -232,6 +233,7 @@ class   CustomerTicketService
             }
 
             $dataObj->ticket_title = $request->subject;
+            $dataObj->vendor_id = $request->vendor_id;
             $dataObj->envato_licence = $request->purchase_code;
             $dataObj->ticket_description = $request->details;
             $dataObj->ticket_type = TICKET_TYPE_INTERNAL;
@@ -240,7 +242,7 @@ class   CustomerTicketService
             $dataObj->last_reply_time = now();
             $dataObj->status = STATUS_PENDING;
             $dataObj->priority = GENERALLY;
-            $dataObj->tenant_id = getTenantId();
+            $dataObj->tenant_id = getTenantId($vendor_id);
 
             /*File Manager Call upload*/
             if ($request->file && count($request->file) > 0) {
