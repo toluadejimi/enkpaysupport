@@ -23,6 +23,8 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
+use Stancl\Tenancy\Database\Models\Domain;
+
 
 
 function send_notification($message)
