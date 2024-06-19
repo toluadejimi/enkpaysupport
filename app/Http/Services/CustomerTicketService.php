@@ -208,6 +208,18 @@ class   CustomerTicketService
                 $google2fa = app('pragmarx.google2fa');
 
                 $vendor_id = $request->vendor_id;
+
+                $domainDetails = Domain::where('domain',  $vendor_id)->first();
+                if ($domainDetails && $domainDetails != null) {
+                    $vend =  $domainDetails->tenant_id;
+                }else{
+                    $vend = User::where('role', USER_ROLE_SUPER_ADMIN)->first(['tenant_id'])?->tenant_id;
+                }
+
+
+
+
+
                 $userStatus = USER_STATUS_ACTIVE;
                 if (getOption('email_verification_status', 0) == 1) {
                     $userStatus = USER_STATUS_UNVERIFIED;
@@ -220,7 +232,7 @@ class   CustomerTicketService
                 $user->status = 1;
                 $user->remember_token = $remember_token;
                 $user->status = $userStatus;
-                $user->tenant_id = getTenantId($vendor_id);
+                $user->tenant_id = $vend;
                 $user->google2fa_secret = $google2fa->generateSecretKey();
                 $user->save();
             }
@@ -242,7 +254,7 @@ class   CustomerTicketService
             $dataObj->last_reply_time = now();
             $dataObj->status = STATUS_PENDING;
             $dataObj->priority = GENERALLY;
-            $dataObj->tenant_id = getTenantId($vendor_id);
+            $dataObj->tenant_id = $vend;
 
             /*File Manager Call upload*/
             if ($request->file && count($request->file) > 0) {

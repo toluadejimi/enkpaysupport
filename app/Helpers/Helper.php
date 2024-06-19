@@ -1140,11 +1140,11 @@ function generateRandomString($length = 8)
     return $randomString;
 }
 
-function getTenantId($vendor_id)
+function getTenantId()
 {
     if (isAddonInstalled('DESKSAAS') > 0) {
-        //$host = request()->getHost();
-        $domainDetails = Domain::where('domain', $vendor_id)->first();
+        $host = request()->getHost();
+        $domainDetails = Domain::where('domain', $host)->first();
         if ($domainDetails && $domainDetails != null) {
             return $domainDetails->tenant_id;
         }else{
