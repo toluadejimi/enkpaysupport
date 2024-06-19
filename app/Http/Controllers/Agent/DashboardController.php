@@ -11,6 +11,7 @@ use App\Traits\ResponseTrait;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
@@ -31,13 +32,16 @@ class DashboardController extends Controller
         if ($request->ajax()) {
             return $this->ticketService->list($request, 'active');
         }
+
+        $ten = Auth::user()->tenant_id ?? null;
+
         $notActiveStatus = array(STATUS_RESOLVED, STATUS_SUSPENDED, STATUS_CANCELED, STATUS_CLOSED, STATUS_ON_HOLD);
-        $data['closedTicketCount'] = Ticket::with('user')->where(['tenant_id' => getTenantId(), 'deleted_at' => NULL, 'status' => STATUS_CLOSED])->count();
-        $data['onHoldTicketCount'] = Ticket::with('user')->where(['tenant_id' => getTenantId(), 'deleted_at' => NULL, 'status' => STATUS_RESOLVED])->count();
-        $data['activeTicketCount'] = Ticket::with('user')->where(['tenant_id' => getTenantId(), 'deleted_at' => NULL])->whereNotIn('status', $notActiveStatus)->count();
+        $data['closedTicketCount'] = Ticket::with('user')->where(['tenant_id' => $ten, 'deleted_at' => NULL, 'status' => STATUS_CLOSED])->count();
+        $data['onHoldTicketCount'] = Ticket::with('user')->where(['tenant_id' => $ten, 'deleted_at' => NULL, 'status' => STATUS_RESOLVED])->count();
+        $data['activeTicketCount'] = Ticket::with('user')->where(['tenant_id' => $ten, 'deleted_at' => NULL])->whereNotIn('status', $notActiveStatus)->count();
         $data['recentTicketCount'] = Ticket::where(['tenant_id'=> auth()->user()->tenant_id])->where(['status'=>STATUS_PENDING,'deleted_at'=>NULL])->count();
         $data['myAssignTicketCount'] = User::find(auth()->id())->myAssignedTickets()->count();
-        $data['totalTicketCount'] = Ticket::where(['tenant_id' => getTenantId(), 'deleted_at' => NULL])->count();
+        $data['totalTicketCount'] = Ticket::where(['tenant_id' => $ten, 'deleted_at' => NULL])->count();
 
         $d = array();
         for ($i = 0; $i < 30; $i++) {
