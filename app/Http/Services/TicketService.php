@@ -38,7 +38,6 @@ class   TicketService
 
         if(Auth::user()->label == 1){
 
-            $envato = Envato::where('tenant_id', auth()->user()->tenant_id)->first();
             $notActiveStatus = array(STATUS_RESOLVED, STATUS_SUSPENDED, STATUS_CANCELED, STATUS_CLOSED, STATUS_ON_HOLD);
             $ticketData = Ticket::with('category','lastConversation','lastConversationUser')
                 ->leftJoin('ticket_seen_unseens', function($join){
