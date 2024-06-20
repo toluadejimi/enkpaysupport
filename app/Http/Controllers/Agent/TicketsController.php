@@ -98,13 +98,30 @@ class   TicketsController extends Controller
 
     public function allTicket(Request $request)
     {
-        if ($request->ajax()) {
-            return $this->ticketService->list($request, 'all');
+
+        if(auth()->user()->label == 1){
+            $ticket_status = 'all';
+            if ($request->ajax()) {
+                return $this->ticketService->list2($request,$ticket_status);
+            } else {
+                $data['pageTitle'] = 'All Ticket';
+                $data['navMain'] = 'mm-active';
+                $data['targetDataUrl'] = route('agent.ticket.all-ticket');
+                return view('agent.tickets.all_ticket', $data);
+            }
+        }else{
+
+            $ticket_status = 'all';
+            if ($request->ajax()) {
+                return $this->ticketService->list($request,$ticket_status);
+            } else {
+                $data['pageTitle'] = 'All Ticket';
+                $data['navMain'] = 'mm-active';
+                $data['targetDataUrl'] = route('agent.ticket.all-ticket');
+                return view('agent.tickets.all_ticket', $data);
+            }
         }
-        $data['pageTitle'] = 'All Ticket';
-        $data['navMain'] = 'mm-active';
-        $data['targetDataUrl'] = route('agent.ticket.all-ticket');
-        return view('agent.tickets.all_ticket', $data);
+
     }
 
     public function suspendTicket(Request $request)
