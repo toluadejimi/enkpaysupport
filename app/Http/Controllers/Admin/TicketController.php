@@ -152,6 +152,11 @@ class TicketController extends Controller
 
         return view('admin.tickets.management.ticket_details.index', $data);
     }
+
+
+
+
+
     public function ticketDelete($id)
     {
         return $this->ticketService->deleteById($id);

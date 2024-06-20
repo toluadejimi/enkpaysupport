@@ -33,6 +33,31 @@ class DashboardController extends Controller
             return $this->ticketService->list($request, 'active');
         }
 
+
+        if(Auth::user()->id == 1 || Auth::user()->id == 2 || Auth::user()->id == 3 ){
+
+            $ten = Auth::user()->tenant_id ?? null;
+
+            $notActiveStatus = array(STATUS_RESOLVED, STATUS_SUSPENDED, STATUS_CANCELED, STATUS_CLOSED, STATUS_ON_HOLD);
+            $data['closedTicketCount'] = Ticket::with('user')->where(['deleted_at' => NULL, 'status' => STATUS_CLOSED])->count();
+            $data['onHoldTicketCount'] = Ticket::with('user')->where(['deleted_at' => NULL, 'status' => STATUS_RESOLVED])->count();
+            $data['activeTicketCount'] = Ticket::with('user')->where(['deleted_at' => NULL])->whereNotIn('status', $notActiveStatus)->count();
+            $data['recentTicketCount'] = Ticket::where(['status'=>STATUS_PENDING,'deleted_at'=>NULL])->count();
+            $data['myAssignTicketCount'] = User::find(auth()->id())->myAssignedTickets()->count();
+            $data['totalTicketCount'] = Ticket::where(['deleted_at' => NULL])->count();
+
+            $d = array();
+            for ($i = 0; $i < 30; $i++) {
+                $d[] = date("M d", strtotime('-' . $i . ' days'));
+            }
+
+            $data['day'] = $d;
+            $data['chart'] = $this->dashboardDailyTicketChart();
+            $data['categoryChart'] = $this->dashboardCategoryChart();
+            return view('agent.dashboard', $data);
+
+        }
+
         $ten = Auth::user()->tenant_id ?? null;
 
         $notActiveStatus = array(STATUS_RESOLVED, STATUS_SUSPENDED, STATUS_CANCELED, STATUS_CLOSED, STATUS_ON_HOLD);
