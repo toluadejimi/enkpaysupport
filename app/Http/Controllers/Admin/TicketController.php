@@ -48,15 +48,32 @@ class TicketController extends Controller
 
     public function ticketList(Request $request)
     {
-        $ticket_status = 'all';
-        if ($request->ajax()) {
-            return $this->ticketService->list($request,$ticket_status);
-        } else {
-            $data['pageTitle'] = __('All Tickets List');
-            $data['navTicketAllClass'] = 'mm-active';
-            $data['targetDataUrl'] = route('admin.tickets.ticketList');
-            return view('admin.tickets.management.index', $data);
+
+        if(auth()->user()->label == 1){
+            $ticket_status = 'all';
+            if ($request->ajax()) {
+                return $this->ticketService->list2($request,$ticket_status);
+            } else {
+                $data['pageTitle'] = __('All Tickets List');
+                $data['navTicketAllClass'] = 'mm-active';
+                $data['targetDataUrl'] = route('admin.tickets.ticketList');
+                return view('admin.tickets.management.index', $data);
+            }
+        }else{
+
+            $ticket_status = 'all';
+            if ($request->ajax()) {
+                return $this->ticketService->list($request,$ticket_status);
+            } else {
+                $data['pageTitle'] = __('All Tickets List');
+                $data['navTicketAllClass'] = 'mm-active';
+                $data['targetDataUrl'] = route('admin.tickets.ticketList');
+                return view('admin.tickets.management.index', $data);
+            }
         }
+
+
+
     }
 
     public function categoryStore(Request $request)
