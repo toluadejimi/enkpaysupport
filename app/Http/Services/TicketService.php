@@ -147,6 +147,7 @@ class   TicketService
             $notActiveStatus = array(STATUS_RESOLVED, STATUS_SUSPENDED, STATUS_CANCELED, STATUS_CLOSED, STATUS_ON_HOLD);
             $ticketData = Ticket::with('category', 'lastConversation', 'lastConversationUser')
                 ->where(['tickets.tenant_id' => auth()->user()->tenant_id])
+                ->orWhere('label', auth()->user()->label)
                 ->leftJoin('ticket_seen_unseens', function ($join) {
                     $join->on('tickets.id', '=', 'ticket_seen_unseens.ticket_id');
                     $join->on('ticket_seen_unseens.created_by', '=', DB::raw(auth()->id()));
