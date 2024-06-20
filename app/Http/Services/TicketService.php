@@ -36,7 +36,7 @@ class   TicketService
     {
 
 
-        if(Auth::user()->id == 1){
+        if(Auth::user()->label == 1){
 
             $envato = Envato::where('tenant_id', auth()->user()->tenant_id)->first();
             $notActiveStatus = array(STATUS_RESOLVED, STATUS_SUSPENDED, STATUS_CANCELED, STATUS_CLOSED, STATUS_ON_HOLD);
@@ -141,54 +141,47 @@ class   TicketService
                 ->rawColumns(['action', 'status','ticket_title','assigned_to','ticket_id','created_by','updated'])
                 ->make(true);
 
-        }
-        if(Auth::user()->id == 2){
+        }else {
 
             $envato = Envato::where('tenant_id', auth()->user()->tenant_id)->first();
             $notActiveStatus = array(STATUS_RESOLVED, STATUS_SUSPENDED, STATUS_CANCELED, STATUS_CLOSED, STATUS_ON_HOLD);
-            $ticketData = Ticket::with('category','lastConversation','lastConversationUser')
-                ->leftJoin('ticket_seen_unseens', function($join){
+            $ticketData = Ticket::with('category', 'lastConversation', 'lastConversationUser')
+                ->where(['tickets.tenant_id' => auth()->user()->tenant_id])
+                ->leftJoin('ticket_seen_unseens', function ($join) {
                     $join->on('tickets.id', '=', 'ticket_seen_unseens.ticket_id');
                     $join->on('ticket_seen_unseens.created_by', '=', DB::raw(auth()->id()));
-                })->join('users', function($join){
+                })->join('users', function ($join) {
                     $join->on('tickets.created_by', '=', 'users.id');
                 })->whereNull('users.deleted_at')
                 ->orderBy('tickets.last_reply_time', 'DESC')
                 ->with(['assignTo'])
-                ->select('users.name','users.image','users.mobile','users.email','tickets.id','tickets.envato_licence','tickets.tracking_no', 'tickets.ticket_title',
-                    'tickets.created_by','tickets.category_id', 'tickets.status', 'tickets.priority', 'tickets.created_at',
-                    'ticket_seen_unseens.is_seen','tickets.last_reply_id','tickets.last_reply_by');
-            if($ticket_status==STATUS_PENDING){
-                $ticketData->where(['tickets.status'=>STATUS_PENDING,'tickets.deleted_at'=>NULL]);
-            }
-            else if($ticket_status==STATUS_RESOLVED){
-                $ticketData->where(['tickets.status'=>STATUS_RESOLVED,'tickets.deleted_at'=>NULL]);
-            }
-            else if($ticket_status==STATUS_INPROGRESS){
-                $ticketData->where(['tickets.status'=>STATUS_INPROGRESS,'tickets.deleted_at'=>NULL]);
-            }
-            else if($ticket_status==STATUS_CLOSED){
-                $ticketData->where(['tickets.status'=>STATUS_CLOSED,'tickets.deleted_at'=>NULL]);
-            }
-            else if($ticket_status==STATUS_ON_HOLD){
-                $ticketData->where(['tickets.status'=>STATUS_ON_HOLD,'tickets.deleted_at'=>NULL]);
-            }
-            else if($ticket_status==STATUS_SUSPENDED){
-                $ticketData->where(['tickets.status'=>STATUS_SUSPENDED,'tickets.deleted_at'=>NULL]);
+                ->select('users.name', 'users.image', 'users.mobile', 'users.email', 'tickets.id', 'tickets.envato_licence', 'tickets.tracking_no', 'tickets.ticket_title',
+                    'tickets.created_by', 'tickets.category_id', 'tickets.status', 'tickets.priority', 'tickets.created_at',
+                    'ticket_seen_unseens.is_seen', 'tickets.last_reply_id', 'tickets.last_reply_by');
+            if ($ticket_status == STATUS_PENDING) {
+                $ticketData->where(['tickets.status' => STATUS_PENDING, 'tickets.deleted_at' => NULL]);
+            } else if ($ticket_status == STATUS_RESOLVED) {
+                $ticketData->where(['tickets.status' => STATUS_RESOLVED, 'tickets.deleted_at' => NULL]);
+            } else if ($ticket_status == STATUS_INPROGRESS) {
+                $ticketData->where(['tickets.status' => STATUS_INPROGRESS, 'tickets.deleted_at' => NULL]);
+            } else if ($ticket_status == STATUS_CLOSED) {
+                $ticketData->where(['tickets.status' => STATUS_CLOSED, 'tickets.deleted_at' => NULL]);
+            } else if ($ticket_status == STATUS_ON_HOLD) {
+                $ticketData->where(['tickets.status' => STATUS_ON_HOLD, 'tickets.deleted_at' => NULL]);
+            } else if ($ticket_status == STATUS_SUSPENDED) {
+                $ticketData->where(['tickets.status' => STATUS_SUSPENDED, 'tickets.deleted_at' => NULL]);
 
             } else if ($ticket_status == 'my-assigned-tickets') {
-                $ticketData->join('ticket_assignee', function($join){
+                $ticketData->join('ticket_assignee', function ($join) {
                     $join->on('tickets.id', '=', 'ticket_assignee.ticket_id');
                     $join->on('ticket_assignee.assigned_to', '=', DB::raw(auth()->id()));
                 });
-            }
-            else if($ticket_status=='active'){
+            } else if ($ticket_status == 'active') {
                 $ticketData->whereNotIn('tickets.status', $notActiveStatus);
-            }
-            else if($ticket_status=='delete'){
+            } else if ($ticket_status == 'delete') {
                 $ticketData->onlyTrashed();
-            }else{
-                $ticketData->where(['tickets.deleted_at'=>NULL]);
+            } else {
+                $ticketData->where(['tickets.deleted_at' => NULL]);
             }
 
 
@@ -197,32 +190,32 @@ class   TicketService
                 ->editColumn('created_by', function ($data) {
                     $userHtml = '<div class="ticket-info-img">
                                 <div class="sf-img">
-                                   <img src="'.getFileUrl($data->image).'" alt="">
+                                   <img src="' . getFileUrl($data->image) . '" alt="">
                                 </div>
                                 <div class="ticket-user-name">
                                     <h5>
-                                        '.$data->name.'
+                                        ' . $data->name . '
                                     </h5>
-                                     <p>'.$data->email.'</p>
-                                    <p>'.$data->mobile.'</p>
+                                     <p>' . $data->email . '</p>
+                                    <p>' . $data->mobile . '</p>
                                 </div>
                            </div>';
                     return $userHtml;
                 })
-                ->editColumn('ticket_title', function ($data) use ($envato){
-                    return getTicketTitleHtml($data,$envato);
+                ->editColumn('ticket_title', function ($data) use ($envato) {
+                    return getTicketTitleHtml($data, $envato);
                 })
                 ->editColumn('status', function ($data) {
                     return getTicketStatusHtml($data);
                 })
                 ->editColumn('updated', function ($data) {
-                    if($data->lastConversation?->created_at){
+                    if ($data->lastConversation?->created_at) {
                         $userHtml = '<div class="ticket-user-name">
-                                     <p>'.$data->lastConversationUser?->name.'</p>
-                                    '.Carbon::createFromFormat('Y-m-d H:i:s', $data->lastConversation?->created_at)->diffForHumans().'
+                                     <p>' . $data->lastConversationUser?->name . '</p>
+                                    ' . Carbon::createFromFormat('Y-m-d H:i:s', $data->lastConversation?->created_at)->diffForHumans() . '
                                 </div>';
                         return $userHtml;
-                    }else{
+                    } else {
                         return "no-conversion";
                     }
                 })
@@ -230,234 +223,23 @@ class   TicketService
                     return getTicketAssignToHtml($data);
                 })
                 ->addColumn('action', function ($data) use ($ticket_status) {
-                    if($ticket_status == 'delete'){
+                    if ($ticket_status == 'delete') {
                         $delete_button = '';
-                    }else{
+                    } else {
                         $delete_button = '<button onclick="deleteItem(\'' . route('admin.tickets.ticket-delete', $data->id) . '\', \'ticketManagementDataTable\')" class="tbl-action-btn text-danger"   title="Delete"><img src="' . asset('admin/images/yajra-datatable/trash.png') . '" alt="delete ticket"></button>';
                     }
                     return '<div class="action__buttons d-flex justify-content-end">
-                            <a href="'.route('admin.tickets.ticket_view', $data->id).'" class="btn-action edit" data-toggle="tooltip" title="Ticket Details">
+                            <a href="' . route('admin.tickets.ticket_view', $data->id) . '" class="btn-action edit" data-toggle="tooltip" title="Ticket Details">
                             <img src="' . asset('admin/images/yajra-datatable/preview-open.png') . '" alt="view ticket">
-                            </a>'.$delete_button.
+                            </a>' . $delete_button .
                         '</div>';
                 })
                 ->addColumn('ticket_id', function ($data) {
                     return getTicketIdHtml($data);
                 })
-                ->rawColumns(['action', 'status','ticket_title','assigned_to','ticket_id','created_by','updated'])
+                ->rawColumns(['action', 'status', 'ticket_title', 'assigned_to', 'ticket_id', 'created_by', 'updated'])
                 ->make(true);
-
         }
-        if(Auth::user()->id == 3){
-
-            $envato = Envato::where('tenant_id', auth()->user()->tenant_id)->first();
-            $notActiveStatus = array(STATUS_RESOLVED, STATUS_SUSPENDED, STATUS_CANCELED, STATUS_CLOSED, STATUS_ON_HOLD);
-            $ticketData = Ticket::with('category','lastConversation','lastConversationUser')
-                ->leftJoin('ticket_seen_unseens', function($join){
-                    $join->on('tickets.id', '=', 'ticket_seen_unseens.ticket_id');
-                    $join->on('ticket_seen_unseens.created_by', '=', DB::raw(auth()->id()));
-                })->join('users', function($join){
-                    $join->on('tickets.created_by', '=', 'users.id');
-                })->whereNull('users.deleted_at')
-                ->orderBy('tickets.last_reply_time', 'DESC')
-                ->with(['assignTo'])
-                ->select('users.name','users.image','users.mobile','users.email','tickets.id','tickets.envato_licence','tickets.tracking_no', 'tickets.ticket_title',
-                    'tickets.created_by','tickets.category_id', 'tickets.status', 'tickets.priority', 'tickets.created_at',
-                    'ticket_seen_unseens.is_seen','tickets.last_reply_id','tickets.last_reply_by');
-            if($ticket_status==STATUS_PENDING){
-                $ticketData->where(['tickets.status'=>STATUS_PENDING,'tickets.deleted_at'=>NULL]);
-            }
-            else if($ticket_status==STATUS_RESOLVED){
-                $ticketData->where(['tickets.status'=>STATUS_RESOLVED,'tickets.deleted_at'=>NULL]);
-            }
-            else if($ticket_status==STATUS_INPROGRESS){
-                $ticketData->where(['tickets.status'=>STATUS_INPROGRESS,'tickets.deleted_at'=>NULL]);
-            }
-            else if($ticket_status==STATUS_CLOSED){
-                $ticketData->where(['tickets.status'=>STATUS_CLOSED,'tickets.deleted_at'=>NULL]);
-            }
-            else if($ticket_status==STATUS_ON_HOLD){
-                $ticketData->where(['tickets.status'=>STATUS_ON_HOLD,'tickets.deleted_at'=>NULL]);
-            }
-            else if($ticket_status==STATUS_SUSPENDED){
-                $ticketData->where(['tickets.status'=>STATUS_SUSPENDED,'tickets.deleted_at'=>NULL]);
-
-            } else if ($ticket_status == 'my-assigned-tickets') {
-                $ticketData->join('ticket_assignee', function($join){
-                    $join->on('tickets.id', '=', 'ticket_assignee.ticket_id');
-                    $join->on('ticket_assignee.assigned_to', '=', DB::raw(auth()->id()));
-                });
-            }
-            else if($ticket_status=='active'){
-                $ticketData->whereNotIn('tickets.status', $notActiveStatus);
-            }
-            else if($ticket_status=='delete'){
-                $ticketData->onlyTrashed();
-            }else{
-                $ticketData->where(['tickets.deleted_at'=>NULL]);
-            }
-
-
-            return datatables($ticketData)
-                ->addIndexColumn()
-                ->editColumn('created_by', function ($data) {
-                    $userHtml = '<div class="ticket-info-img">
-                                <div class="sf-img">
-                                   <img src="'.getFileUrl($data->image).'" alt="">
-                                </div>
-                                <div class="ticket-user-name">
-                                    <h5>
-                                        '.$data->name.'
-                                    </h5>
-                                     <p>'.$data->email.'</p>
-                                    <p>'.$data->mobile.'</p>
-                                </div>
-                           </div>';
-                    return $userHtml;
-                })
-                ->editColumn('ticket_title', function ($data) use ($envato){
-                    return getTicketTitleHtml($data,$envato);
-                })
-                ->editColumn('status', function ($data) {
-                    return getTicketStatusHtml($data);
-                })
-                ->editColumn('updated', function ($data) {
-                    if($data->lastConversation?->created_at){
-                        $userHtml = '<div class="ticket-user-name">
-                                     <p>'.$data->lastConversationUser?->name.'</p>
-                                    '.Carbon::createFromFormat('Y-m-d H:i:s', $data->lastConversation?->created_at)->diffForHumans().'
-                                </div>';
-                        return $userHtml;
-                    }else{
-                        return "no-conversion";
-                    }
-                })
-                ->addColumn('assigned_to', function ($data) {
-                    return getTicketAssignToHtml($data);
-                })
-                ->addColumn('action', function ($data) use ($ticket_status) {
-                    if($ticket_status == 'delete'){
-                        $delete_button = '';
-                    }else{
-                        $delete_button = '<button onclick="deleteItem(\'' . route('admin.tickets.ticket-delete', $data->id) . '\', \'ticketManagementDataTable\')" class="tbl-action-btn text-danger"   title="Delete"><img src="' . asset('admin/images/yajra-datatable/trash.png') . '" alt="delete ticket"></button>';
-                    }
-                    return '<div class="action__buttons d-flex justify-content-end">
-                            <a href="'.route('admin.tickets.ticket_view', $data->id).'" class="btn-action edit" data-toggle="tooltip" title="Ticket Details">
-                            <img src="' . asset('admin/images/yajra-datatable/preview-open.png') . '" alt="view ticket">
-                            </a>'.$delete_button.
-                        '</div>';
-                })
-                ->addColumn('ticket_id', function ($data) {
-                    return getTicketIdHtml($data);
-                })
-                ->rawColumns(['action', 'status','ticket_title','assigned_to','ticket_id','created_by','updated'])
-                ->make(true);
-
-        }
-
-        $envato = Envato::where('tenant_id', auth()->user()->tenant_id)->first();
-        $notActiveStatus = array(STATUS_RESOLVED, STATUS_SUSPENDED, STATUS_CANCELED, STATUS_CLOSED, STATUS_ON_HOLD);
-        $ticketData = Ticket::with('category','lastConversation','lastConversationUser')
-            ->where(['tickets.tenant_id'=> auth()->user()->tenant_id])
-            ->leftJoin('ticket_seen_unseens', function($join){
-                $join->on('tickets.id', '=', 'ticket_seen_unseens.ticket_id');
-                $join->on('ticket_seen_unseens.created_by', '=', DB::raw(auth()->id()));
-            })->join('users', function($join){
-                $join->on('tickets.created_by', '=', 'users.id');
-            })->whereNull('users.deleted_at')
-            ->orderBy('tickets.last_reply_time', 'DESC')
-            ->with(['assignTo'])
-            ->select('users.name','users.image','users.mobile','users.email','tickets.id','tickets.envato_licence','tickets.tracking_no', 'tickets.ticket_title',
-                'tickets.created_by','tickets.category_id', 'tickets.status', 'tickets.priority', 'tickets.created_at',
-                'ticket_seen_unseens.is_seen','tickets.last_reply_id','tickets.last_reply_by');
-        if($ticket_status==STATUS_PENDING){
-            $ticketData->where(['tickets.status'=>STATUS_PENDING,'tickets.deleted_at'=>NULL]);
-        }
-        else if($ticket_status==STATUS_RESOLVED){
-            $ticketData->where(['tickets.status'=>STATUS_RESOLVED,'tickets.deleted_at'=>NULL]);
-        }
-        else if($ticket_status==STATUS_INPROGRESS){
-            $ticketData->where(['tickets.status'=>STATUS_INPROGRESS,'tickets.deleted_at'=>NULL]);
-        }
-        else if($ticket_status==STATUS_CLOSED){
-            $ticketData->where(['tickets.status'=>STATUS_CLOSED,'tickets.deleted_at'=>NULL]);
-        }
-        else if($ticket_status==STATUS_ON_HOLD){
-            $ticketData->where(['tickets.status'=>STATUS_ON_HOLD,'tickets.deleted_at'=>NULL]);
-        }
-        else if($ticket_status==STATUS_SUSPENDED){
-            $ticketData->where(['tickets.status'=>STATUS_SUSPENDED,'tickets.deleted_at'=>NULL]);
-
-        } else if ($ticket_status == 'my-assigned-tickets') {
-            $ticketData->join('ticket_assignee', function($join){
-                $join->on('tickets.id', '=', 'ticket_assignee.ticket_id');
-                $join->on('ticket_assignee.assigned_to', '=', DB::raw(auth()->id()));
-            });
-        }
-        else if($ticket_status=='active'){
-            $ticketData->whereNotIn('tickets.status', $notActiveStatus);
-        }
-        else if($ticket_status=='delete'){
-            $ticketData->onlyTrashed();
-        }else{
-            $ticketData->where(['tickets.deleted_at'=>NULL]);
-        }
-
-
-        return datatables($ticketData)
-            ->addIndexColumn()
-            ->editColumn('created_by', function ($data) {
-                $userHtml = '<div class="ticket-info-img">
-                                <div class="sf-img">
-                                   <img src="'.getFileUrl($data->image).'" alt="">
-                                </div>
-                                <div class="ticket-user-name">
-                                    <h5>
-                                        '.$data->name.'
-                                    </h5>
-                                     <p>'.$data->email.'</p>
-                                    <p>'.$data->mobile.'</p>
-                                </div>
-                           </div>';
-                return $userHtml;
-            })
-            ->editColumn('ticket_title', function ($data) use ($envato){
-                return getTicketTitleHtml($data,$envato);
-            })
-            ->editColumn('status', function ($data) {
-                return getTicketStatusHtml($data);
-            })
-            ->editColumn('updated', function ($data) {
-                if($data->lastConversation?->created_at){
-                    $userHtml = '<div class="ticket-user-name">
-                                     <p>'.$data->lastConversationUser?->name.'</p>
-                                    '.Carbon::createFromFormat('Y-m-d H:i:s', $data->lastConversation?->created_at)->diffForHumans().'
-                                </div>';
-                    return $userHtml;
-                }else{
-                    return "no-conversion";
-                }
-            })
-            ->addColumn('assigned_to', function ($data) {
-                return getTicketAssignToHtml($data);
-            })
-            ->addColumn('action', function ($data) use ($ticket_status) {
-                if($ticket_status == 'delete'){
-                    $delete_button = '';
-                }else{
-                    $delete_button = '<button onclick="deleteItem(\'' . route('admin.tickets.ticket-delete', $data->id) . '\', \'ticketManagementDataTable\')" class="tbl-action-btn text-danger"   title="Delete"><img src="' . asset('admin/images/yajra-datatable/trash.png') . '" alt="delete ticket"></button>';
-                }
-                return '<div class="action__buttons d-flex justify-content-end">
-                            <a href="'.route('admin.tickets.ticket_view', $data->id).'" class="btn-action edit" data-toggle="tooltip" title="Ticket Details">
-                            <img src="' . asset('admin/images/yajra-datatable/preview-open.png') . '" alt="view ticket">
-                            </a>'.$delete_button.
-                    '</div>';
-            })
-            ->addColumn('ticket_id', function ($data) {
-                return getTicketIdHtml($data);
-            })
-            ->rawColumns(['action', 'status','ticket_title','assigned_to','ticket_id','created_by','updated'])
-            ->make(true);
     }
 
     public function getById($id)
