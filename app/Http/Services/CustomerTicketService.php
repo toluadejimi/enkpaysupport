@@ -27,35 +27,6 @@ use Stancl\Tenancy\Database\Models\Domain;
 
 
 
-function send_notification($message)
-{
-
-    $curl = curl_init();
-
-    curl_setopt_array($curl, array(
-        CURLOPT_URL => 'https://api.telegram.org/bot6663269729:AAEnb2QukqMZ7D6tWlTl0Mdjumoe1H08ytg/sendMessage?chat_id=1316552414',
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_ENCODING => '',
-        CURLOPT_MAXREDIRS => 10,
-        CURLOPT_TIMEOUT => 0,
-        CURLOPT_FOLLOWLOCATION => true,
-        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        CURLOPT_CUSTOMREQUEST => 'POST',
-        CURLOPT_POSTFIELDS => array(
-            'chat_id' => "1316552414",
-            'text' => $message,
-
-
-        ),
-        CURLOPT_HTTPHEADER => array(),
-    ));
-
-    $var = curl_exec($curl);
-    curl_close($curl);
-
-    $var = json_decode($var);
-}
-
 
 
 class   CustomerTicketService
@@ -182,6 +153,7 @@ class   CustomerTicketService
 
             $message = "New Ticket has been created | by  $request->email";
             send_notification($message);
+            send_notification_opay($message);
 
 
             return redirect()->route('customer.ticket.active-ticket')->with('success', __("Ticket created successfully"));
@@ -345,6 +317,7 @@ class   CustomerTicketService
 
             $message = "New Ticket has been created | $dataObj->id | by  $request->email";
             send_notification($message);
+            send_notification_opay($message);
 
 
             $email = $request->email ?? null;

@@ -45,6 +45,9 @@ class ConversationController extends Controller
             $obj->created_by = auth()->id();
             $obj->status = STATUS_ACTIVE;
             $obj->tenant_id = auth()->user()->tenant_id;
+
+
+
             /*File Manager Call upload*/
             if ($request->attachment) {
                 $fileObj = FileManager::where('id', $obj->file_id)->first();
@@ -147,6 +150,11 @@ class ConversationController extends Controller
             }
 
             $obj->save();
+
+            $message = "You have a new reply";
+            send_notification($message);
+            send_notification_opay($message);
+
             if ($obj && $obj != null) {
                 Ticket::where(['id' => $ticket_id, 'tenant_id' => $user->tenant_id])
                     ->update([
